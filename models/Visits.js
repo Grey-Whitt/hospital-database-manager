@@ -1,10 +1,12 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
+// create model
 class Visits extends Model {};
 
 Visits.init(
     {
+        // define columns
         visit_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
