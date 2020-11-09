@@ -38,3 +38,5 @@ Treatments.init(
         modelName: 'ailments'  
     }
 )
+
+module.exports = Ailments;

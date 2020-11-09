@@ -56,3 +56,5 @@ Patients.init(
         modelName: 'patients'
     }
 )
+
+module.exports = Patients;
