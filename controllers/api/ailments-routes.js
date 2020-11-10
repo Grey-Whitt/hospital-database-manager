@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
         });
 });
 
-// GET /api/ailments/1
+// GET /api/ailment/1
 router.get('/:id', (req, res) => {
     Ailments.findOne({
         where: {
@@ -33,7 +33,7 @@ router.get('/:id', (req, res) => {
         });
 });
 
-// POST /api/ailments
+// POST /api/ailment
 router.post('/', (req, res) => {
     Ailments.create({
         ailment_name: req.body.ailment_name,
@@ -46,7 +46,7 @@ router.post('/', (req, res) => {
         })
 });
 
-// PUT /api/ailments/1
+// PUT /api/ailment/1
 router.put('/:id', (req, res) => {
     Ailments.update(req.body, {
         where: {
@@ -66,7 +66,7 @@ router.put('/:id', (req, res) => {
         })
 });
 
-// DELETE /api/ailments/1
+// DELETE /api/ailment/1
 router.delete('/:id', (req, res) => {
     Ailments.destroy({
         where: {
