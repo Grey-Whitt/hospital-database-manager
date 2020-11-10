@@ -4,8 +4,7 @@ app.set('view engine', 'pug');
 
 app.get('/', function (req,res) {
   res.render(
-    'landing', 
-    { title: "clinic database landing", message: "example message"}
+    'landing'
   ); 
 })
 
