@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(routes)
 
 // connect to database and server
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log('Now listening'));
 });
 // =========

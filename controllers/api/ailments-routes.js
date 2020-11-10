@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
     Ailments.findOne({
         where: {
-            id: req.params.id
+            ailment_id: req.params.id
         }
     })
         .then(dbAilmentData => {
@@ -50,7 +50,7 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
     Ailments.update(req.body, {
         where: {
-            id: req.params.id
+            ailment_id: req.params.id
         }
     })
         .then(dbAilmentData => {
