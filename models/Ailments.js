@@ -18,7 +18,7 @@ Ailments.init(
             allowNull: false
         },
         ailment_description: {
-            type: DataTypes.TEXT,
+            type: DataTypes.STRING,
             allowNull: false
         },
         treatment_id: {

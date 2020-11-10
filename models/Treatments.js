@@ -18,13 +18,14 @@ Treatments.init(
             allowNull: false
         },
         treatment_cost: {
-            type: DataTypes.INTEGER(11),
+            type: DataTypes.INTEGER,
+            defaultValue: 0,
             validate: {
                 isNumeric: true
             }
         },
         treatment_description: {
-            type: DataTypes.TEXT,
+            type: DataTypes.STRING(300),
             allowNull: false
         }
 
