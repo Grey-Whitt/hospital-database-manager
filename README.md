@@ -21,22 +21,22 @@ Creator | Role
 
 ## User Story:
 
->AS A VISITOR TO THE WEBSITE,\
->I want to get information about the clinic,\
->I want to be able to see information about the doctors
+*AS A VISITOR TO THE WEBSITE,\
+I want to get information about the clinic,\
+I want to be able to see information about the doctors*
 
->AS A DOCTOR,\
->I want to see my patient history,\
->I want to see visit records (past and upcoming),\
->I want to update visit records,\
->I want to update my contact/about information,\
->I want to be able to add other doctor users
+*AS A DOCTOR,\
+I want to see my patient history,\
+I want to see visit records (past and upcoming),\
+I want to update visit records,\
+I want to update my contact/about information,\
+I want to be able to add other doctor users*
 
->AS A PATIENT,\
->I want to be able to create a patient account,\
->I want to see my visits (upcoming and past),\
->I want to schedule visits (stretch goal?),\
->I want to update my contact information
+*AS A PATIENT,\
+I want to be able to create a patient account,\
+I want to see my visits (upcoming and past),\
+I want to schedule visits (stretch goal?),\
+I want to update my contact information*
 
 
 ## Project Requirements:
