@@ -4,7 +4,7 @@ const sequelize = require('../config/connection');
 // create model
 class Ailments extends Model {};
 
-Treatments.init(
+Ailments.init(
     {
         //define columns here
         ailment_id: {
@@ -18,7 +18,7 @@ Treatments.init(
             allowNull: false
         },
         ailment_description: {
-            type: DataTypes.TEXT,
+            type: DataTypes.STRING,
             allowNull: false
         },
         treatment_id: {

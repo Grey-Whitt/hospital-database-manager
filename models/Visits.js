@@ -16,26 +16,26 @@ Visits.init(
         patient_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            // references: {
-            //     model: 'patient',
-            //     key: 'id'
-            // }
+            references: {
+                model: 'patients',
+                key: 'patient_id'
+            }
         },
         ailment_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            // references: {
-            //     model: 'ailments',
-            //     key: 'id'
-            // }
+            references: {
+                model: 'ailments',
+                key: 'ailment_id'
+            }
         },
         doctor_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            // references: {
-            //     model: 'doctors',
-            //     key: 'id'
-            // }
+            references: {
+                model: 'doctors',
+                key: 'doctor_id'
+            }
         },
         visit_note: {
             type: DataTypes.STRING, //default limit 255 characters
