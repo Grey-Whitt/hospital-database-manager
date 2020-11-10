@@ -1,0 +1,80 @@
+doctype html
+head
+  title Clinic Pal
+  meta(charset='UTF-8')
+  link(rel='stylesheet' href='styles/layout.css' type='text/css')
+
+// header
+.wrapper.row1
+  header#header.clear
+    #hgroup
+      h1
+        a(href='#') Clinic Buddy
+      h2 Putting the &quot;I see&quot; back in ICU
+    nav
+      ul
+        li.last
+          a(href='#') Login
+
+// content
+.wrapper.row2
+  #container.clear
+    // Slider
+    section#slider
+      a(href='#')
+        img(src='images/demo/960x360.gif' alt='')
+    // main content
+    #homepage
+      // services area
+      section#services.clear
+        article.one_quarter
+          figure
+            img(src='images/demo/32x32.gif' width='32' height='32' alt='')
+          strong Leeches?
+          p Ten bloodletting tips your doctors don&apos;t want you to know about.
+          p.more
+            a(href='#') Read More &raquo;
+        article.one_quarter
+          figure
+            img(src='images/demo/32x32.gif' width='32' height='32' alt='')
+          strong Wax on or wax off? An analysis...
+          p
+            | For years scientists and philosophers have asked themselves this. Today we discuss the definitive answer.
+          p.more
+            a(href='#') Read More &raquo;
+        article.one_quarter
+          figure
+            img(src='images/demo/32x32.gif' width='32' height='32' alt='')
+          strong Ouch!
+          p Why hitting your toe on the coffee table hurts.
+          p.more
+            a(href='#') Read More &raquo;
+        article.one_quarter.lastbox
+          figure
+            img(src='images/demo/32x32.gif' width='32' height='32' alt='')
+          strong How drug trials actually work
+          p Who gets to test them and how to get invited!
+          p.more
+            a(href='#') Read More &raquo;
+      section#doctors
+        article
+          figure
+            ul.clear
+              li.one_third
+                img(src='images/demo/290x180.gif' width='290' height='180' alt='')
+              li.one_third
+                img(src='images/demo/290x180.gif' width='290' height='180' alt='')
+              li.one_third.lastbox
+                img(src='images/demo/290x180.gif' width='290' height='180' alt='')
+            figcaption
+              a(href='#') Meet our doctors! &raquo;
+
+// Footer
+.wrapper.row3
+  footer#footer.clear
+    p.fl_left
+      | Copyright &copy; 2020 - All Rights Reserved - 
+      a(href='#') Clinic Buddy
+    p.fl_right
+      | Questions? Click 
+      a(target='_blank' href='index.html' title='here') here.
