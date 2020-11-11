@@ -3,35 +3,36 @@ const Doctors = require('./Doctors')
 const Patients = require('./Patients')
 const Treatments = require('./Treatments')
 const Visits = require('./Visits')
+const Users = require('./Users')
 
-Visits.hasOne(Patients, {
-    foreignKey: 'patients_id'
-})
+//visit has many Users (1 patient, 1 doctor)
+//user has many visits
 
-Visits.hasOne(Doctors, {
-    foreignKey: 'doctor_id'
-})
+// Visits.hasMany(Users)
 
-Visits.hasOne(Ailments, {
-    foreignKey: 'ailment_id'
-})
+// Users.hasMany(Visits, {
+//     foreignKey: ''
+// })
 
-Patients.hasMany(Visits, {
-    foreignKey: 'visit_id'
-})
+// Visits.hasOne(Ailments, {
+//     foreignKey: 'ailment_id'
+// })
 
-Doctors.hasMany(Visits, {
-    foreignKey: 'visit_id'
-})
+// Ailments.belongsTo(Visits)
 
-Ailments.hasMany(Visits, {
-    foreignKey: 'visit_id'
-})
+// Ailments.hasOne(Treatments, {
+//     foreignKey: "treatment_id"
+// })
 
-Ailments.hasOne(Treatments, {
-    foreignKey: "treatment_id"
-})
+// Treatments.hasMany(Ailments, {
+//     foreignKey: 'ailment_id'
+// })
 
-Treatments.hasMany(Ailments, {
-    foreignKey: 'ailment_id'
-})
+module.exports = {
+    Ailments,
+    Doctors,
+    Patients,
+    Treatments,
+    Visits,
+    Users,
+}

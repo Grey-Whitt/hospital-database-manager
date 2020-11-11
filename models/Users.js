@@ -3,13 +3,13 @@ const sequelize = require('../config/connection');
 const bcrypt = require('bcrypt')
 
 // create model
-class User extends Model {
+class Users extends Model {
     checkPassword(pass) {
         return bcrypt.compareSync(pass, this.password);
     }
 };
 
-User.init(
+Users.init(
     {
         user_id: {
             type: DataTypes.INTEGER,
@@ -26,7 +26,7 @@ User.init(
             allowNull: false
         },
         phone: {
-            type: DataTypes.INTEGER(11),
+            type: DataTypes.STRING(25),
             allowNull: false,
             validate: {
                 isNumeric: true
@@ -66,10 +66,11 @@ User.init(
         },
 
         sequelize,
+        timestamps: false,
         freezeTableName: true, //Makes model tableName and model have the same name
         underscored: true, //auto changes fields to snake_case
         modelName: 'users'
     }
 )
 
-module.exports = Patients;
+module.exports = Users;

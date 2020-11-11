@@ -32,6 +32,7 @@ Treatments.init(
     },
     {
         sequelize,
+        timestamps: false,
         freezeTableName: true, //Makes model tableName and model have the same name
         underscored: true, //auto changes fields to snake_case
         modelName: 'treatments'
