@@ -129,7 +129,7 @@ I want to update my contact information*
 * JavaScript
 * HTML
 * CSS
-* Pug (formerly known as Jade)
+* Handlebars
 * Node
 * Express
 * MySQL
