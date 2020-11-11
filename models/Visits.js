@@ -17,8 +17,8 @@ Visits.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
-                model: 'patients',
-                key: 'patient_id'
+                model: 'users',
+                key: 'user_id'
             }
         },
         ailment_id: {
@@ -33,8 +33,8 @@ Visits.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
-                model: 'doctors',
-                key: 'doctor_id'
+                model: 'users',
+                key: 'user_id'
             }
         },
         visit_note: {
