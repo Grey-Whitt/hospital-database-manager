@@ -37,27 +37,8 @@ Doctors.init(
             type: DataTypes.STRING(100),
             allowNull: false
         },
-        doctor_password: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [4]
-            }
-        }
     },
     {
-        hooks: {
-            // before a user is created, hash and salt the password password 10 times
-            async beforeCreate(newDoctor) {
-                newDoctor.password = await bcrypt.hash(newDoctor.password, 10);
-                return newDoctor;
-            },
-            // before a user is updated, hash and salt the password 10 times
-            async beforeUpdate(updtDoctor) {
-                updtDoctor.password = await bcrypt.hash(updtDoctor.password, 10);
-                return updtDoctor;
-            }
-        },
 
         sequelize,
         freezeTableName: true, //Makes model tableName and model have the same name
