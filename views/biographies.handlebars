@@ -1,22 +1,32 @@
 <!DOCTYPE html>
-<html lang="en" />
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Meet the Doctors</title>
-    <link rel="stylesheet" href="/styles/layout.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/styles/layout.css">
 </head>
 <body>
-    
-{{!-- Footer --}}
-<footer>
-    <p>
-    Copyright &copy; 2020 - All Rights Reserved - 
-    a(href='#') Clinic Buddy
-    </p>
-    <p>
-    Questions? Click 
-    a(target='_blank' href='index.html' title='here') here.
-    </p>
+
+<h2>Dr. {{name}} </h2>
+    <ol>
+    {{#each biographies}}
+      <li>{{biography}}</li>
+    {{/each}}
+    </ol>
+
+<div id="#">
+<img src="https://unsplash.com/photos/9vnACvX2748" alt="doctor1">
+</div>
+
+<div>
+<img src="https://unsplash.com/photos/9vnACvX2748" alt="doctor2">
+</div>
+
+<div>
+<img src="https://unsplash.com/photos/9vnACvX2748" alt="doctor3">
+</div>
+
 </body>
 </html>
