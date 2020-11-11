@@ -9,6 +9,14 @@
 </head>
 <body>
 
+<nav>
+  {{#if loggedIn}}
+  <button id="logout" class="">Logout</button>
+  {{else}}
+  <a href="/login">login</a>
+  {{/if}}
+</nav>
+
 <h2>Dr. {{name}} </h2>
     <ol>
     {{#each biographies}}
