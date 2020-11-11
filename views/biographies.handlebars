@@ -47,24 +47,8 @@
     </p>
 </footer>
 
-<h2>Dr. {{name}} </h2>
-    <ol>
-    {{#each biographies}}
-      <li>{{biography}}</li>
-    {{/each}}
-    </ol>
-
-<div id="#">
-<img src="https://unsplash.com/photos/9vnACvX2748" alt="doctor1">
-</div>
-
-<div>
-<img src="https://unsplash.com/photos/9vnACvX2748" alt="doctor2">
-</div>
-
-<div>
-<img src="https://unsplash.com/photos/9vnACvX2748" alt="doctor3">
-</div>
-
+{{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+{{/if}}
 </body>
 </html>
