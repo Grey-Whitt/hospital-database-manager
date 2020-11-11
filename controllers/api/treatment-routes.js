@@ -33,7 +33,7 @@ router.get('/:id', (req, res) => {
         });
 });
 
-// POST /api/treatments
+// POST /api/treatment
 router.post('/', (req, res) => {
     Treatments.create({
         treatment_name: req.body.treatment_name,
@@ -47,7 +47,7 @@ router.post('/', (req, res) => {
         })
 });
 
-// PUT /api/treatments/1
+// PUT /api/treatment/1
 router.put('/:id', (req, res) => {
     Treatments.update(req.body, {
         where: {
@@ -67,7 +67,7 @@ router.put('/:id', (req, res) => {
         })
 });
 
-// DELETE /api/treatments/1
+// DELETE /api/treatment/1
 router.delete('/:id', (req, res) => {
     Treatments.destroy({
         where: {
