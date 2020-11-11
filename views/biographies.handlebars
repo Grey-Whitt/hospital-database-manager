@@ -1,54 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
+
     <title>{{title}}</title>
     <link rel="stylesheet" href="/styles/layout.css">
 </head>
+
 <body>
 
-{{!-- header --}}
-<header>
+    {{!-- header --}}
+    <header>
 
-<h1>
- <a href="/">Clinic Buddy</a>
-</h1>
-<h2>Putting the &quot;I see&quot; back in ICU</h2> 
+        <h1>
+            <a href="/">Clinic Buddy</a>
+        </h1>
+        <h2>Putting the &quot;I see&quot; back in ICU</h2>
 
-{{!-- navigation --}}
-<nav>
-  {{#if loggedIn}}
-  <button id="logout" class="">Logout</button>
-  {{else}}
-  <a href="/login">login</a>
-  {{/if}}
-</nav>
-</header>
+        {{!-- navigation --}}
+        <nav>
+            {{#if loggedIn}}
+            <button id="logout" class="">Logout</button>
+            {{else}}
+            <a href="/login">login</a>
+            {{/if}}
+        </nav>
+    </header>
 
-<div class="#">
+    <div class="#">
 
-<main>
-    {{{body}}}
-</main>
+        <ol class="">
+            {{#each biographies as |biography|}}
+            <li>
+                <ol class="">
+                    {{#each biographies as |biography|}}
+                    <li>
+                        {{> biography-info biography }}
+                    </li>
+                    {{/each}}
+                </ol>
+            </li>
+            {{/each}}
+        </ol>
 
-</div>
+        <main>
+            {{{body}}}
+        </main>
 
-{{!-- footer --}}
-<footer>
-    <p>
-    Copyright &copy; 2020 - All Rights Reserved - 
-    <a href='#' target="_blank" Clinic Buddy></a>
-    </p>
-    <p>
-    Questions? Click 
-    <a target='_blank' href='index.html' title='here'>here.</a>
-    </p>
-</footer>
+    </div>
 
-{{#if loggedIn}}
-<script src="/javascript/logout.js"></script>
-{{/if}}
+    {{!-- footer --}}
+    <footer>
+        <p>
+            Copyright &copy; 2020 - All Rights Reserved -
+            <a href='#' target="_blank" Clinic Buddy></a>
+        </p>
+        <p>
+            Questions? Click
+            <a target='_blank' href='index.html' title='here'>here.</a>
+        </p>
+    </footer>
+
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
 </body>
+
 </html>
