@@ -6,44 +6,56 @@
 <link rel="stylesheet" href="/public/styles/layout.css" type="text/css">
 </head> --}}
 <body>
-  <div class="wrapper row1">
-    <header id="header" class="clear">
-      <div id="hgroup">
-        <h1><a href="#">Clinic Buddy</a></h1>
-        <h2>Putting the "I see" back in ICU</h2>
-      </div>
-      <nav>
-        <ul>
-          <li class="last"><a href="#">Login</a></li>
-        </ul>
-      </nav>
-    </header>
-  </div>
+
+  <nav class="navbar navbar-expand navbar-dark bg-dark nb">
+    <a class="navbar-brand" href="/">Clinic Pal</a>
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+      {{#if loggedIn}}
+      <a class="nav-item nav-link" href="/dashboard">Dash board</a>
+      <a id="logout" class="nav-item nav-link" href="/login">Log Out</a>
+      {{else}}
+      <a class="nav-item nav-link" href="/login">Log In</a>
+      {{/if}}
+    </div>
+  </nav>
+
   <div class="wrapper row2">
     <div id="container" class="clear">
-      <section id="slider"><a href="#"><img class="hero" src="https://github.com/brogrammers-coding-bootcamp/hospital-database-manager/blob/feature/handlebars/public/images/960x360.jpg?raw=true" alt=""></a></section>
+      <section id="slider"><a href="#"><img class="hero"
+            src="https://github.com/brogrammers-coding-bootcamp/hospital-database-manager/blob/feature/handlebars/public/images/960x360.jpg?raw=true"
+            alt=""></a></section>
       <div id="homepage">
         <section id="services" class="clear">
           <article class="one_quarter">
-            <figure><img src="https://github.com/brogrammers-coding-bootcamp/hospital-database-manager/blob/feature/handlebars/public/images/32x32.jpg?raw=true" width="32" height="32" alt=""></figure>
+            <figure><img
+                src="https://github.com/brogrammers-coding-bootcamp/hospital-database-manager/blob/feature/handlebars/public/images/32x32.jpg?raw=true"
+                width="32" height="32" alt=""></figure>
             <strong>Leeches?</strong>
             <p>Ten bloodletting tips your doctors don't want you to know about.</p>
             <p class="more"><a href="#">Read More &raquo;</a></p>
           </article>
           <article class="one_quarter">
-            <figure><img src="https://github.com/brogrammers-coding-bootcamp/hospital-database-manager/blob/feature/handlebars/public/images/32x32.jpg?raw=true" width="32" height="32" alt=""></figure>
+            <figure><img
+                src="https://github.com/brogrammers-coding-bootcamp/hospital-database-manager/blob/feature/handlebars/public/images/32x32.jpg?raw=true"
+                width="32" height="32" alt=""></figure>
             <strong>Wax on or wax off?</strong>
-            <p>For years scientists and philosophers have asked themselves this. Today we discuss the definitive answer.</p>
+            <p>For years scientists and philosophers have asked themselves this. Today we discuss the definitive answer.
+            </p>
             <p class="more"><a href="#">Read More &raquo;</a></p>
           </article>
           <article class="one_quarter">
-            <figure><img src="https://github.com/brogrammers-coding-bootcamp/hospital-database-manager/blob/feature/handlebars/public/images/32x32.jpg?raw=true" width="32" height="32" alt=""></figure>
+            <figure><img
+                src="https://github.com/brogrammers-coding-bootcamp/hospital-database-manager/blob/feature/handlebars/public/images/32x32.jpg?raw=true"
+                width="32" height="32" alt=""></figure>
             <strong>Ouch!</strong>
             <p>Why hitting your toe on the coffee table hurts.</p>
             <p class="more"><a href="#">Read More &raquo;</a></p>
           </article>
           <article class="one_quarter lastbox">
-            <figure><img src="https://github.com/brogrammers-coding-bootcamp/hospital-database-manager/blob/feature/handlebars/public/images/32x32.jpg?raw=true" width="32" height="32" alt=""></figure>
+            <figure><img
+                src="https://github.com/brogrammers-coding-bootcamp/hospital-database-manager/blob/feature/handlebars/public/images/32x32.jpg?raw=true"
+                width="32" height="32" alt=""></figure>
             <strong>Drug trials?</strong>
             <p>Who gets to test them and how to get invited!</p>
             <p class="more"><a href="#">Read More &raquo;</a></p>
@@ -54,9 +66,15 @@
           <article>
             <figure>
               <ul class="clear">
-                <li class="one_third"><img src="https://github.com/brogrammers-coding-bootcamp/hospital-database-manager/blob/feature/handlebars/public/images/21B_img.jpg?raw=true" width="290" height="180" alt=""></li>
-                <li class="one_third"><img src="https://github.com/brogrammers-coding-bootcamp/hospital-database-manager/blob/feature/handlebars/public/images/fx7_img.jpg?raw=true" width="290" height="180" alt=""></li>
-                <li class="one_third lastbox"><img src="https://github.com/brogrammers-coding-bootcamp/hospital-database-manager/blob/feature/handlebars/public/images/gonk_img.jpg?raw=true" width="290" height="180" alt=""></li>
+                <li class="one_third"><img
+                    src="https://github.com/brogrammers-coding-bootcamp/hospital-database-manager/blob/feature/handlebars/public/images/21B_img.jpg?raw=true"
+                    width="290" height="180" alt=""></li>
+                <li class="one_third"><img
+                    src="https://github.com/brogrammers-coding-bootcamp/hospital-database-manager/blob/feature/handlebars/public/images/fx7_img.jpg?raw=true"
+                    width="290" height="180" alt=""></li>
+                <li class="one_third lastbox"><img
+                    src="https://github.com/brogrammers-coding-bootcamp/hospital-database-manager/blob/feature/handlebars/public/images/gonk_img.jpg?raw=true"
+                    width="290" height="180" alt=""></li>
               </ul>
               <figcaption><a href="#">Meet our doctors! &raquo;</a></figcaption>
             </figure>
