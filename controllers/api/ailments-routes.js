@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
     Ailments.findOne({
         where: {
-            id: req.params.id
+            ailment_id: req.params.id
         }
     })
         .then(dbAilmentData => {
@@ -37,7 +37,8 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
     Ailments.create({
         ailment_name: req.body.ailment_name,
-        ailment_description: req.body.ailment_description
+        ailment_description: req.body.ailment_description,
+        treatment: req.body.treatment
     })
         .then(dbAilmentData => res.json(dbAilmentData))
         .catch(err => {
@@ -50,7 +51,7 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
     Ailments.update(req.body, {
         where: {
-            id: req.params.id
+            ailment_id: req.params.id
         }
     })
         .then(dbAilmentData => {
@@ -70,7 +71,7 @@ router.put('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
     Ailments.destroy({
         where: {
-            id: req.params.id
+            ailment_id: req.params.id
         }
     })
         .then(dbAilmentData => {

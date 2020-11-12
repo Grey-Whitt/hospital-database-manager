@@ -3,50 +3,65 @@ const sequelize = require('../config/connection');
 const bcrypt = require('bcrypt')
 
 // create model
-class Patients extends Model {
+class Users extends Model {
     checkPassword(pass) {
         return bcrypt.compareSync(pass, this.password);
     }
 };
 
-
-Patients.init(
+Users.init(
     {
-        patient_id: {
+        user_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true
         },
-        patient_name: {
+        first_name: {
             type: DataTypes.STRING(40),
             allowNull: false
         },
-        patient_phone: {
-            type: DataTypes.INTEGER(11),
+        last_name: {
+            type: DataTypes.STRING(40),
+            allowNull: false
+        },
+        phone: {
+            type: DataTypes.STRING(25),
+            allowNull: false,
             validate: {
                 isNumeric: true
             }
         },
-        patient_password: {
+        email: {
+            type: DataTypes.STRING(40),
+            allowNull: false,
+            validate: {
+                isEmail: true
+            }
+        },
+        password: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [4]
             }
+        },
+        role: {
+            type: DataTypes.STRING,
+            allowNull: false
         }
     },
     {
         hooks: {
             // before a user is created, hash and salt the password password 10 times
-            async beforeCreate(newPatient) {
-                newPatient.password = await bcrypt.hash(newPatient.password, 10);
-                return newPatient;
+            async beforeCreate(newUser) {
+                newUser.password = await bcrypt.hash(newUser.password, 10);
+                return newUser;
             },
             // before a user is updated, hash and salt the password 10 times
-            async beforeUpdate(updtPatient) {
-                updtPatient.password = await bcrypt.hash(updtDoctor.password, 10);
-                return updtDoctor;
+            async beforeUpdate(updtUser) {
+                updtUser.password = await bcrypt.hash(updtUser.password, 10);
+                return updtUser;
             }
         },
 
@@ -54,8 +69,8 @@ Patients.init(
         timestamps: false,
         freezeTableName: true, //Makes model tableName and model have the same name
         underscored: true, //auto changes fields to snake_case
-        modelName: 'patients'
+        modelName: 'users'
     }
 )
 
-//module.exports = Patients;
+module.exports = Users;
