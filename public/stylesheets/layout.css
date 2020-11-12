@@ -7,9 +7,9 @@
 #gallery li{display:block; width:940px; height:280px; border:10px solid #B7B7B7; text-align: center; display: flex; justify-content: center; align-items: center; font-size: 200%}
 #gallery li:hover{border-color:#FF9900;}
 
-html{overflow-y:scroll;} /* Forces a scrollbar when the viewport is larger than the websites content - CSS3 */
+html{overflow-y:scroll; height: 100%;} /* Forces a scrollbar when the viewport is larger than the websites content - CSS3 */
 
-body{margin:0; padding:0; font-size:13px; font-family:Georgia, "Times New Roman", Times, serif; color:#919191; background-color:#232323;}
+body{margin:0; padding:0; font-size:13px; font-family:Georgia, "Times New Roman", Times, serif; color:#919191; background-color:#232323; height: 100%;}
 
 .clear:after{content:"."; display:block; height:0; clear:both; visibility:hidden; line-height:0;}
 .clear{display:block; clear:both;}
@@ -32,7 +32,7 @@ img.hero{display: block; max-width: 960px; max-height: 360px; width: auto; heigh
 
 /*----------------------------------------------HTML 5 Overrides-------------------------------------*/
 
-address, article, aside, figcaption, figure, footer, header, nav, section{display:block; margin:0; padding:0;}
+address, article, aside, figcaption, figure, header, nav, section{display:block; margin:0; padding:0;}
 
 q{display:block; padding:0 10px 8px 10px; color:#979797; background-color:#ECECEC; font-style:italic; line-height:normal;}
 q:before{content:'� '; font-size:26px;}
@@ -144,10 +144,18 @@ input, textarea, select{font-size:12px; font-family:Georgia,"Times New Roman",Ti
 
 /* footer */
 
-.footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  padding-left: 3%;
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1 0 auto !important;
+}
+
+footer {
+  margin-top: 2%;
+  padding: 5px;
+  font-size: 110%;
+  flex-shrink: 0;
 }
