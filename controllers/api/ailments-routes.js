@@ -50,7 +50,7 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
     Ailments.update(req.body, {
         where: {
-            ailment_id: req.params.id
+            ailment_id: req.params.ailment_id
         }
     })
         .then(dbAilmentData => {
@@ -70,7 +70,7 @@ router.put('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
     Ailments.destroy({
         where: {
-            id: req.params.id
+            ailment_id: req.params.ailment_id
         }
     })
         .then(dbAilmentData => {

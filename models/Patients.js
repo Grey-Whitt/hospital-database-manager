@@ -58,4 +58,4 @@ Patients.init(
     }
 )
 
-module.exports = Patients;
+//module.exports = Patients;

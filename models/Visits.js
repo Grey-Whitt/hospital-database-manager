@@ -21,20 +21,20 @@ Visits.init(
                 key: 'user_id'
             }
         },
-        ailment_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: 'ailments',
-                key: 'ailment_id'
-            }
-        },
         doctor_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
                 model: 'users',
                 key: 'user_id'
+            }
+        },
+        ailment_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'ailments',
+                key: 'ailment_id'
             }
         },
         visit_note: {

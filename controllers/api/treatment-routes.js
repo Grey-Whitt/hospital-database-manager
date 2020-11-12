@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const Treatments = require('../../models/Treatments');
+//const Treatments = require('../../models/Treatments');
 const sequelize = require('../../config/connection');
 
 // GET /api/treatments
@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
     Treatments.findOne({
         where: {
-            treatment_id: req.params.id
+            treatment_id: req.params.treatment_id
         }
     })
         .then(dbTreatmentData => {
@@ -51,7 +51,7 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
     Treatments.update(req.body, {
         where: {
-            treatment_id: req.params.id
+            treatment_id: req.params.treatment_id
         }
     })
         .then(dbTreatmentData => {
@@ -71,7 +71,7 @@ router.put('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
     Treatments.destroy({
         where: {
-            treatment_id: req.params.id
+            treatment_id: req.params.treatment_id
         }
     })
         .then(dbTreatmentData => {

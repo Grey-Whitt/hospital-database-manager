@@ -21,13 +21,9 @@ Ailments.init(
             type: DataTypes.STRING(300),
             allowNull: false
         },
-        treatment_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: 'treatments',
-                key: 'treatment_id'
-            }
+        treatment: {
+            type: DataTypes.STRING(300),
+            allowNull: false
         }
         
     },

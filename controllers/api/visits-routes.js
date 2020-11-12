@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
     Visits.findOne({
         where: {
-            visit_id: req.params.id
+            visit_id: req.params.visit_id
         }
         //add include
     })
@@ -51,7 +51,7 @@ router.put('/:id', (req, res) => {
         },
         {
             where: {
-                visit_id: req.params.id
+                visit_id: req.params.visit_id
             }
         }
     )
@@ -71,7 +71,7 @@ router.put('/:id', (req, res) => {
     Visits.destroy(
         {
             where: {
-                visit_id: req.params.id
+                visit_id: req.params.visit_id
             }
         }
     )
