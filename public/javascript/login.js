@@ -1,3 +1,5 @@
+// var errorModal = document.querySelector("#errorModal");
+
 //logs the user in if the email and password are correct
 async function loginFormHandler(event) {
     event.preventDefault();
@@ -18,8 +20,7 @@ async function loginFormHandler(event) {
         if (response.ok) {
             document.location.replace('/');
         } else {
-            //get rid of this alert
-            $('#exampleModalCenter').modal('show')
+            $("#errorModal").modal()
         }
     }
 }
