@@ -1,15 +1,24 @@
-var express = require('express')  
-var app = express()  
-app.set('view engine', 'handlebars')
-var doctors = ['Doctor1', 'Doctor2', 'Doctor3, Doctor4, Doctor5'];
+const router = require('express').Router();
+const sequelize = require('../config/connection');
+const auth = require('../utils/auth');
+const { Users, Doctors } = require('../models')
 
-// api route needs to be created
-app.get('/doctors', function (req, res) {  
-  res.render(
-    'biographies',
-    { title: 'Meet the Doctors', header: 'Meet Your Doctors!', doctors})
-})
- 
-app.listen(3001, function () {  
-  console.log('Example app listening on port 3001!')
-})
+router.get('/', (req, res) => {
+  // access model and run findall
+  Doctors.findAll(
+      {
+          include: [
+          { model: Users, as: 'user', attributes: { exclude: ["password"] }},
+      ]
+  })
+    .then((data) => {
+      const doctors = data.map((doctor) => doctor.get({ plain: true }));
+      res.render('biographies', { doctors });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+  
+module.exports = router;
