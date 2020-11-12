@@ -16,17 +16,22 @@
                     data-parent="#accordionExample">
                     <div class="card-body">
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Doctor: {{visit.doctor.first_name}} {{visit.doctor.last_name}}
-                                Phone Number: {{visit.doctor.phone}}
-                                Email: {{visit.doctor.email}}
+                            <li class="list-group-item">
+                                <b></b>Doctor:</b> {{visit.doctor.first_name}} {{visit.doctor.last_name}}
+                                <br><b></b>Number:</b> {{visit.doctor.phone}}
+                                <br><b></b>Email:</b> {{visit.doctor.email}}
                             </li>
-                            <li class="list-group-item">Patient: {{visit.patient.first_name}} {{visit.patient.last_name}}
-                                Phone Number: {{visit.patient.phone}}
-                                Email: {{visit.patient.email}}
-                            <li class="list-group-item">Ailment: {{visit.ailment.ailment_name}}
-                                Treatment: {{visit.ailment.treatment}}
+                            <li class="list-group-item">
+                                <b></b>Patient:</b> {{visit.patient.first_name}} {{visit.patient.last_name}}
+                                <br><b></b>Phone Number:</b> {{visit.patient.phone}}
+                                <br><b></b>Email:</b> {{visit.patient.email}}
+                            <li class="list-group-item">
+                                <b></b>Ailment:</b> {{visit.ailment.ailment_name}}
+                                <br><b></b>Treatment:</b> {{visit.ailment.treatment}}
                             </li>
-                            <li class="list-group-item">Note: {{visit.visit_note}}</li>
+                            <li class="list-group-item">
+                                <b></b>Note:</b> {{visit.visit_note}}
+                            </li>
                         </ul>
                     </div>
                 </div>
