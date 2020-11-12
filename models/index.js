@@ -3,7 +3,7 @@ const Doctors = require('./Doctors')
 const Visits = require('./Visits')
 const Users = require('./Users')
 
-Users.hasMany(Visits)
+Users.hasMany(Visits, {foreignKey : 'user_id'})
 Visits.belongsTo(Users, {as: 'doctor', foreignKey: 'doctor_id'})
 Visits.belongsTo(Users, {as: 'patient', foreignKey: 'patient_id'})
 
