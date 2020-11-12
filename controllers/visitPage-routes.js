@@ -11,7 +11,6 @@ router.get('/', (req, res) => {
   })
     .then((data) => {
       const visits = data.map((visit) => visit.get({ plain: true }));
-      console.log(visits);
       res.render('visits', { visits });
     })
     .catch((err) => {

@@ -5,7 +5,7 @@ const visitPageRoutes = require('./visitPage-routes')
 
 router.use('/api', apiRoutes);
 router.use('/', homeRoutes);
-router.use('/', visitPageRoutes);
+router.use('/visits', visitPageRoutes);
 
 //send 404 if user goes to undefined route
 router.use((req, res) => {
