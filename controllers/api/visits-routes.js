@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
         include: [
             { model: Users, as: 'doctor', attributes: { exclude: ["password"] } },
             { model: Users, as: 'patient', attributes: { exclude: ["password"] } },
-        ],
+        ]
 
     })
         .then(data => res.json(data))
@@ -23,7 +23,10 @@ router.get('/:id', (req, res) => {
             where: {
                 visit_id: req.params.id
             },
-            
+            include: [
+                { model: Users, as: 'doctor', attributes: { exclude: ["password"] } },
+                { model: Users, as: 'patient', attributes: { exclude: ["password"] } },
+            ]
         }
     )
         .then(data => res.json(data))
