@@ -9,7 +9,6 @@ router.get('/', auth, (req, res) => {
       { model: Users, as: 'doctor' },
       { model: Users, as: 'patient' },
       { model: Ailments, as: 'ailment' }
-    
     ]
   })
     .then((data) => {
