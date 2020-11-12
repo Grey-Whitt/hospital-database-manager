@@ -1,6 +1,5 @@
 const seedAilments = require('./ailment-seeds')
 const seedDoctors = require('./doctors-seeds')
-const seedTreatments = require('./treatments-seeds')
 const seedUsers = require('./users-seeds')
 const seedVisits = require('./visits-seeds')
 
@@ -15,14 +14,14 @@ const seedAll = async () => {
 
     await seedUsers();
     console.log('\n----- USERS SEEDED -----\n');
-  
+
     await seedDoctors();
     console.log('\n----- DOCTORS SEEDED -----\n');
 
     await seedVisits();
     console.log('\n----- VISITS SEEDED -----\n');
-  
+
     process.exit(0);
-  };
-  
-  seedAll();
+};
+
+seedAll();
