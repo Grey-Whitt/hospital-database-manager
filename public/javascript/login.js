@@ -16,11 +16,10 @@ async function loginFormHandler(event) {
         });
 
         if (response.ok) {
-            
             document.location.replace('/');
         } else {
             //get rid of this alert
-            alert(response.statusText);
+            $('#exampleModalCenter').modal('show')
         }
     }
 }
