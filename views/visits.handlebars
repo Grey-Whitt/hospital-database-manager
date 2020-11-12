@@ -17,10 +17,16 @@
                     <div class="card-body">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Doctor: {{visit.doctor.first_name}} {{visit.doctor.last_name}}
+                                Phone Number: {{visit.doctor.phone}}
+                                Email: {{visit.doctor.email}}
                             </li>
-                            <li class="list-group-item">Patient: {{visit.patient.first_name}}
-                                {{visit.patient.last_name}}</li>
-                            <li class="list-group-item">Vestibulum at eros</li>
+                            <li class="list-group-item">Patient: {{visit.patient.first_name}} {{visit.patient.last_name}}
+                                Phone Number: {{visit.patient.phone}}
+                                Email: {{visit.patient.email}}
+                            <li class="list-group-item">Ailment: {{visit.ailment.ailment_name}}
+                                Treatment: {{visit.ailment.treatment}}
+                            </li>
+                            <li class="list-group-item">Note: {{visit.visit_note}}</li>
                         </ul>
                     </div>
                 </div>
