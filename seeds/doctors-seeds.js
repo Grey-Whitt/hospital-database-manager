@@ -9,7 +9,7 @@ const doctorData = [
     },
     {
         user_id: 2,
-        doctor_bio: 'A4-D is a laboratory assistant droid who worked for the Confederacy of Independent Systems as a medical/repair droid under General Grievous. a programming defect caused EV-A4-D to have a sadistic personality',
+        doctor_bio: 'Gonk is a laboratory assistant droid who worked for the Confederacy of Independent Systems as a medical/repair droid under General Grievous. a programming defect caused EV-A4-D to have a sadistic personality',
         doctor_specialty: 'cybernetic prosthetics',
         doctor_education: 'Manufactured by MerenData'
     },

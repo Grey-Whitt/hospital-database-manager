@@ -10,8 +10,8 @@ const userData = [
         role: 'doctor'
     },
     {
-        first_name: 'EV' ,
-        last_name: 'A4-D' ,
+        first_name: 'Gonk' ,
+        last_name: 'Droid' ,
         phone: 4445556666,
         email: 'ayfourdee@email.com',
         password: 1234,
