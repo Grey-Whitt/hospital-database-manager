@@ -5,6 +5,7 @@ const sequelize = require('./config/connection')
 const app = express();
 const PORT = process.env.PORT || 3001;
 const routes = require('./controllers')
+const helpers = require('./utils/helpers')
 // =========
 
 // middleware 
@@ -15,7 +16,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //view engine
 const exphbs = require('express-handlebars');
-const hbs = exphbs.create({});
+const hbs = exphbs.create({helpers});
 
 app.set('view engine', 'handlebars');
 app.engine('handlebars', hbs.engine);

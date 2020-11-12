@@ -7,7 +7,7 @@
                     <h2 class="mb-0">
                         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#1234"
                             aria-expanded="true" aria-controls="1234">
-                            {{visit.createdAt}}
+                            {{format_date visit.createdAt}}
                         </button>
                     </h2>
                 </div>
@@ -18,7 +18,7 @@
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
                                 <b></b>Doctor:</b> {{visit.doctor.first_name}} {{visit.doctor.last_name}}
-                                <br><b></b>Number:</b> {{visit.doctor.phone}}
+                                <br><b></b>Phone Number:</b> {{visit.doctor.phone}}
                                 <br><b></b>Email:</b> {{visit.doctor.email}}
                             </li>
                             <li class="list-group-item">

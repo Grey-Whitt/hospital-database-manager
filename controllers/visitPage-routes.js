@@ -10,11 +10,11 @@ router.get('/', auth, (req, res) => {
       { model: Users, as: 'patient' },
       { model: Ailments, as: 'ailment' }
     
-    ],
+    ]
   })
     .then((data) => {
       const visits = data.map((visit) => visit.get({ plain: true }));
-      res.render('visits', { visits });
+      res.render('visits', { visits, loggedIn: true });
     })
     .catch((err) => {
       console.log(err);

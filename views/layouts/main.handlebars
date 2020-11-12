@@ -16,7 +16,6 @@
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
       {{#if loggedIn}}
-      <a class="nav-item nav-link" href="/dashboard">Dash board</a>
       <a id="logout" class="nav-item nav-link" href="/login">Log Out</a>
       {{else}}
       <a class="nav-item nav-link" href="/login">Log In</a>
@@ -43,6 +42,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
     </script>
+  {{#if loggedIn}}
+  <script src="/javascript/logout.js"></script>
+  {{/if}}
 </body>
 
 </html>
