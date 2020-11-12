@@ -44,8 +44,10 @@ router.get('/:id', (req, res) => {
 // POST /api/doctors
 router.post('/', (req, res) => {
     Doctors.create({
-        doctor_name: req.body.doctor_name,
-        doctor_password: req.body.doctor_password
+        user_id: req.body.user_id,
+        doctor_bio: req.body.doctor_bio,
+        doctor_specialty: req.body.doctor_specialty,
+        doctor_education: req.body.doctor_education
     })
         .then(dbDoctorData => res.json(dbDoctorData))
         .catch(err => {
