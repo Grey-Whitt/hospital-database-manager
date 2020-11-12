@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Visits, Users } = require('../../models');
+const { Visits, Users, Ailments } = require('../../models');
 const sequelize = require('../../config/connection');
 
 router.get('/', (req, res) => {
@@ -7,6 +7,7 @@ router.get('/', (req, res) => {
         include: [
             { model: Users, as: 'doctor', attributes: { exclude: ["password"] } },
             { model: Users, as: 'patient', attributes: { exclude: ["password"] } },
+            { model: Ailments, as: 'ailment'} 
         ]
 
     })
@@ -26,6 +27,7 @@ router.get('/:id', (req, res) => {
             include: [
                 { model: Users, as: 'doctor', attributes: { exclude: ["password"] } },
                 { model: Users, as: 'patient', attributes: { exclude: ["password"] } },
+                { model: Ailments, as: 'ailment'}
             ]
         }
     )
