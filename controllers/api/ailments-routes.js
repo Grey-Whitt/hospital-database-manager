@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
         });
 });
 
-// GET /api/ailment/1
+// GET /api/ailments/1
 router.get('/:id', (req, res) => {
     Ailments.findOne({
         where: {
@@ -33,11 +33,12 @@ router.get('/:id', (req, res) => {
         });
 });
 
-// POST /api/ailment
+// POST /api/ailments
 router.post('/', (req, res) => {
     Ailments.create({
         ailment_name: req.body.ailment_name,
-        ailment_description: req.body.ailment_description
+        ailment_description: req.body.ailment_description,
+        treatment: req.body.treatment
     })
         .then(dbAilmentData => res.json(dbAilmentData))
         .catch(err => {
@@ -46,11 +47,11 @@ router.post('/', (req, res) => {
         })
 });
 
-// PUT /api/ailment/1
+// PUT /api/ailments/1
 router.put('/:id', (req, res) => {
     Ailments.update(req.body, {
         where: {
-            ailment_id: req.params.ailment_id
+            ailment_id: req.params.id
         }
     })
         .then(dbAilmentData => {
@@ -66,11 +67,11 @@ router.put('/:id', (req, res) => {
         })
 });
 
-// DELETE /api/ailment/1
+// DELETE /api/ailments/1
 router.delete('/:id', (req, res) => {
     Ailments.destroy({
         where: {
-            ailment_id: req.params.ailment_id
+            ailment_id: req.params.id
         }
     })
         .then(dbAilmentData => {

@@ -1,6 +1,5 @@
 const seedAilments = require('./ailment-seeds')
 const seedDoctors = require('./doctors-seeds')
-const seedTreatments = require('./treatments-seeds')
 const seedUsers = require('./users-seeds')
 const seedVisits = require('./visits-seeds')
 
