@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
+const auth = require('../utils/auth');
 const { Visits, Users, Ailments } = require('../models')
 
-router.get('/', (req, res) => {
+router.get('/', auth, (req, res) => {
   Visits.findAll({
     include: [
       { model: Users, as: 'doctor' },
