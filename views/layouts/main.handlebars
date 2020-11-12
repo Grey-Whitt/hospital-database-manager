@@ -10,17 +10,26 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand navbar-dark bg-dark nb">
+        <a class="navbar-brand" href="/">Clinic Pal</a>
+        <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+        {{#if loggedIn}}
+        <a class="nav-item nav-link" href="/dashboard">Dash board</a>
+        <a id="logout" class="nav-item nav-link" href="/login">Log Out</a>
+        {{else}}
+        <a class="nav-item nav-link" href="/login">Log In</a>
+        {{/if}}
+        </div>
+    </nav>
 
-<body>
-{{{body}}}
-</body>
+    {{{body}}}
 
-<div class="wrapper row3">
-  <footer id="footer" class="clear">
-    <p class="fl_left">Copyright &copy; 2020 - All Rights Reserved - <a href="#">Clinic Buddy</a></p>
-    <p class="fl_right">Questions? Click <a target="_blank" href="index.html" title="here">here.</a></p>
-  </footer>
-</div>
-
+    <div class="wrapper row3">
+    <footer id="footer" class="clear">
+        <p class="fl_left">Copyright &copy; 2020 - All Rights Reserved - <a href="#">Clinic Buddy</a></p>
+        <p class="fl_right">Questions? Click <a target="_blank" href="index.html" title="here">here.</a></p>
+    </footer>
+    </div>
 </body>
 </html>
