@@ -12,6 +12,9 @@ Visits.hasOne(Ailments, {
     constraints: false
 })
 
+Users.hasOne(Doctors, {foreignKey: 'user_id'});
+Doctors.belongsTo(Users, {foreignKey: 'user_id'});
+
 module.exports = {
     Ailments,
     Doctors,
