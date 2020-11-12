@@ -1,11 +1,16 @@
 const router = require('express').Router();
-const Doctors = require('../../models/Doctors');
 const sequelize = require('../../config/connection');
+const { Doctors, Users } = require('../../models');
 
 // GET /api/doctors
 router.get('/', (req, res) => {
     // access model and run findall
-    Doctors.findAll()
+    Doctors.findAll(
+        {
+            include: [
+            { model: Users, as: 'user', attributes: { exclude: ["password"] }},
+        ]
+    })
         .then(dbDoctorData => res.json(dbDoctorData))
         .catch(err => {
             console.log(err);
@@ -13,12 +18,15 @@ router.get('/', (req, res) => {
         });
 });
 
-// GET /api/doctor/1
+// GET /api/doctors/1
 router.get('/:id', (req, res) => {
     Doctors.findOne({
         where: {
-            doctor_id: req.params.doctor_id
-        }
+            doctor_id: req.params.id
+        },
+        include: [
+            { model: Users, as: 'user', attributes: { exclude: ["password"] }},
+        ]
     })
         .then(dbDoctorData => {
             if (!dbDoctorData){
@@ -33,7 +41,7 @@ router.get('/:id', (req, res) => {
         });
 });
 
-// POST /api/doctor
+// POST /api/doctors
 router.post('/', (req, res) => {
     Doctors.create({
         doctor_name: req.body.doctor_name,
@@ -46,11 +54,11 @@ router.post('/', (req, res) => {
         })
 });
 
-// PUT /api/doctor/1
+// PUT /api/doctors/1
 router.put('/:id', (req, res) => {
     Doctors.update(req.body, {
         where: {
-            doctor_id: req.params.doctor_id
+            doctor_id: req.params.id
         }
     })
         .then(dbDoctorData => {
@@ -66,11 +74,11 @@ router.put('/:id', (req, res) => {
         })
 });
 
-// DELETE /api/doctor/1
+// DELETE /api/doctors/1
 router.delete('/:id', (req, res) => {
     Doctors.destroy({
         where: {
-            doctor_id: req.params.doctor_id
+            doctor_id: req.params.id
         }
     })
         .then(dbDoctorData => {
