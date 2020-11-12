@@ -21,6 +21,28 @@ app.set('view engine', 'handlebars');
 app.engine('handlebars', hbs.engine);
 // =======
 
+
+//session ====
+const session = require('express-session');
+
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
+const sess = {
+  secret: '53cr37',
+  cookie: {},
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize,
+    checkExpirationInterval: 1000 * 60 * 5, //checks if user is idle every 5 minutes
+    expiration: 1000 * 60 * 15 //if user is idle for 15 minutes the session ends
+  }),
+
+};
+// =========
+
+app.use(session(sess));
+
 // turn on routes
 app.use(routes)
 
