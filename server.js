@@ -11,6 +11,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // =========
 
+//view engine
+const exphbs = require('express-handlebars');
+const hbs = exphbs.create();
+
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+// =======
+
 app.use(routes)
 
 // connect to database and server

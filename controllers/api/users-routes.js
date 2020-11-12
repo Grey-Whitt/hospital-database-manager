@@ -1,14 +1,10 @@
-
 const router = require('express').Router();
 const Users = require('../../models/Users');
 const sequelize = require('../../config/connection');
 
 router.get('/', (req, res) => {
-    Visits.findAll({
-        include: [
-            { model: Users, as: 'doctor'},
-            { model: Users, as: 'patient'},
-          ]
+    Users.findAll({
+        attributes: {exclude: ['password']}
     })
         .then(data => res.json(data))
         .catch(err => {
@@ -21,8 +17,9 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
     Users.findOne({
         where: {
-            user_id: req.params.user_id
-        }
+            user_id: req.params.id
+        },
+        attributes: {exclude: ['password']}
     })
         .then(dbUserData => {
             if (!dbUserData){
@@ -58,7 +55,7 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
     Users.update(req.body, {
         where: {
-            user_id: req.params.user_id
+            user_id: req.params.id
         }
     })
         .then(dbUserData => {
@@ -74,11 +71,11 @@ router.put('/:id', (req, res) => {
         })
 });
 
-// DELETE /api/User/1
+// DELETE /api/users/1
 router.delete('/:id', (req, res) => {
     Users.destroy({
         where: {
-            user_id: req.params.user_id
+            user_id: req.params.id
         }
     })
         .then(dbUserData => {

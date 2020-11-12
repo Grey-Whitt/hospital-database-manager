@@ -1,10 +1,14 @@
 const router = require('express').Router();
-const Visits = require('../../models/Visits');
+const { Visits, Users } = require('../../models');
 const sequelize = require('../../config/connection');
 
 router.get('/', (req, res) => {
     Visits.findAll({
-        //add include
+        include: [
+            { model: Users, as: 'doctor', attributes: { exclude: ["password"] } },
+            { model: Users, as: 'patient', attributes: { exclude: ["password"] } },
+        ],
+
     })
         .then(data => res.json(data))
         .catch(err => {
@@ -14,12 +18,14 @@ router.get('/', (req, res) => {
 })
 
 router.get('/:id', (req, res) => {
-    Visits.findOne({
-        where: {
-            visit_id: req.params.visit_id
+    Visits.findOne(
+        {
+            where: {
+                visit_id: req.params.id
+            },
+            
         }
-        //add include
-    })
+    )
         .then(data => res.json(data))
         .catch(err => {
             console.log(err);
@@ -51,7 +57,7 @@ router.put('/:id', (req, res) => {
         },
         {
             where: {
-                visit_id: req.params.visit_id
+                visit_id: req.params.id
             }
         }
     )
@@ -71,7 +77,7 @@ router.put('/:id', (req, res) => {
     Visits.destroy(
         {
             where: {
-                visit_id: req.params.visit_id
+                visit_id: req.params.id
             }
         }
     )
