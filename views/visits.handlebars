@@ -1,0 +1,30 @@
+<div>
+    {{#each visits as |visit|}}
+    <div class="container">
+        <div class="accordion" id="accordionExample">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#1234"
+                            aria-expanded="true" aria-controls="1234">
+                            {{visit.createdAt}}
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="1234" class="collapse show" aria-labelledby="headingOne"
+                    data-parent="#accordionExample">
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Doctor: {{visit.doctor.first_name}} {{visit.doctor.last_name}}
+                            </li>
+                            <li class="list-group-item">Patient: {{visit.patient.first_name}}
+                                {{visit.patient.last_name}}</li>
+                            <li class="list-group-item">Vestibulum at eros</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}

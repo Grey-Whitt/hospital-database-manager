@@ -110,16 +110,12 @@ input, textarea, select{font-size:12px; font-family:Georgia,"Times New Roman",Ti
 #container #homepage{display:block; width:100%; line-height:1.6em;}
 
 #container #homepage #services{padding:0 0 30px 0; border-bottom:1px solid #DEDEDE;}
-#container #homepage #services article{}
 #container #homepage #services figure{display:inline; float:left;}
 #container #homepage #services strong{float:left; margin:8px 0 0 10px; padding:0; font-size:14px; font-weight:bold; text-transform:uppercase;}
 #container #homepage #services p{display:block; margin:0; padding:5px 0 0 0; clear:both; line-height:1.6em;}
 
 #container #homepage #doctors{padding:0 0 30px 0; border-bottom:1px solid #DEDEDE;}
-#container #homepage #doctors article{}
-#container #homepage #doctors article figure{}
 #container #homepage #doctors article figure ul{margin:0; padding:0; list-style:none;}
-#container #homepage #doctors article figure ul li{}
 #container #homepage #doctors article figure ul li img{padding:4px; border:1px solid #D6D6D6;}
 #container #homepage #doctors article figure figcaption{display:block; width:100%; margin-top:20px; text-align:right;}
 
@@ -127,16 +123,12 @@ input, textarea, select{font-size:12px; font-family:Georgia,"Times New Roman",Ti
 
 #container #content{float:left; width:630px; line-height:1.6em;}
 
-#container #content #posts{}
 #container #content #posts ul{margin:0; padding:0; list-style:none;}
 #container #content #posts ul li{display:block; width:100%; margin-bottom:30px;}
 #container #content #posts ul li.last{ margin-bottom:0;}
-#container #content #posts ul li article{}
-#container #content #posts ul li article figure{}
 #container #content #posts ul li article figure img{float:left; width:180px; height:150px; margin:0; padding:4px; border:1px solid #D6D6D6;}
 #container #content #posts ul li article figure figcaption{display:block; float:right; width:410px;}
 #container #content #posts ul li article figure h2{font-size:14px;}
-#container #content #posts ul li article figure footer{}
 
 /* ------Right Column-----*/
 
@@ -150,7 +142,12 @@ input, textarea, select{font-size:12px; font-family:Georgia,"Times New Roman",Ti
 #container #right_column nav a{display:block; margin:0; padding:5px 10px 5px 20px; color:#666666; background:url("../images/orange_file.gif") no-repeat 10px center #FFFFFF; text-decoration:none; border-bottom:1px dotted #666666;}
 #container #right_column nav a:hover{color:#FF9900; background-color:#FFFFFF;}
 
-/*----------------------------------------------Footer-------------------------------------*/
+/* footer */
 
-#footer{padding:20px 0;}
-#footer p{margin:0; padding:0;}
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  padding-left: 3%;
+}
