@@ -1,12 +1,14 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Visits, Users } = require('../models')
+const { Visits, Users, Ailments } = require('../models')
 
 router.get('/', (req, res) => {
   Visits.findAll({
     include: [
       { model: Users, as: 'doctor' },
       { model: Users, as: 'patient' },
+      { model: Ailments, as: 'ailment' }
+    
     ],
   })
     .then((data) => {
