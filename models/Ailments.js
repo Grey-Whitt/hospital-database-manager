@@ -4,7 +4,7 @@ const sequelize = require('../config/connection');
 // create model
 class Ailments extends Model {};
 
-Treatments.init(
+Ailments.init(
     {
         //define columns here
         ailment_id: {
@@ -18,21 +18,18 @@ Treatments.init(
             allowNull: false
         },
         ailment_description: {
-            type: DataTypes.TEXT,
+            type: DataTypes.STRING(300),
             allowNull: false
         },
-        treatment_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: 'treatments',
-                key: 'treatment_id'
-            }
+        treatment: {
+            type: DataTypes.STRING(300),
+            allowNull: false
         }
         
     },
     {
         sequelize,
+        timestamps: false,
         freezeTableName: true, //Makes model tableName and model have the same name
         underscored: true, //auto changes fields to snake_case
         modelName: 'ailments'  
