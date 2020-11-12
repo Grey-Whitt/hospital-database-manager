@@ -1,4 +1,5 @@
 const router = require('express').Router();
+
 const ailmentsRoutes = require('./ailments-routes');
 const doctorRoutes = require('./doctor-routes');
 const visitsRoutes = require('./visits-routes');
