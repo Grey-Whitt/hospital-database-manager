@@ -3,7 +3,8 @@ const { Visits, Users, Ailments } = require('../../models');
 const sequelize = require('../../config/connection');
 const checkRole = require('../../utils/check-role')
 
-router.get('/', checkRole, (req, res) => {
+//router.get('/', checkRole, (req, res) => {
+router.get('/', (req, res) => {
     Visits.findAll({
         include: [
             { model: Users, as: 'doctor', attributes: { exclude: ["password"] } },
@@ -54,14 +55,7 @@ router.post('/', (req, res) => {
 })
 
 router.put('/:id', (req, res) => {
-    Visits.findOne(
-        {
-            patient_id: req.body.patient_id,
-            doctor_id: req.body.doctor_id,
-            ailment_id: req.body.ailment_id,
-            visit_note: req.body.visit_note
-        },
-        {
+    Visits.update(req.body, {
             where: {
                 visit_id: req.params.id
             }
@@ -79,7 +73,7 @@ router.put('/:id', (req, res) => {
         });
 })
 
-router.put('/:id', (req, res) => {
+router.delete('/:id', (req, res) => {
     Visits.destroy(
         {
             where: {

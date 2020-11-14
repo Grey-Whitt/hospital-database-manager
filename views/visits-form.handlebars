@@ -1,0 +1,49 @@
+<div class="main_container">
+  <h2>Add Visit</h2>
+
+  <form id="newVisitForm" method="post">
+    {{!-- <div class="imgcontainer">
+      <img src="images/img_avatar2.png" alt="Avatar" class="avatar">
+    </div> --}}
+
+    <div class="container">
+      <label for="patientId"><b>Patient ID</b></label>
+      <input id='patientId' type="text" placeholder="Enter Patient ID" name="patientId" required>
+      <label for="doctorId"><b>Doctor ID</b></label>
+      <input id='doctorId' type="text" placeholder="Enter Doctor ID" name="doctorId" required>
+      <label for="ailmentId"><b>Ailment ID</b></label>
+      <input id='ailmentId' type="text" placeholder="Enter Ailment ID" name="ailmentId" required>
+      <label for="visitNote"><b>Visit Note</b></label>
+      <input id='visitNote' type="text" placeholder="Enter visit note" name="visitNote" required>
+
+      <button type="submit">Submit</button>
+    </div>
+
+  </form>
+
+  <br>
+   <h2>Update Visit</h2>
+
+  <form id="updateVisitForm" method="post">
+    {{!-- <div class="imgcontainer">
+      <img src="images/img_avatar2.png" alt="Avatar" class="avatar">
+    </div> --}}
+
+    <div class="container">
+      <label for="upVisitId"><b>Visit ID</b></label>
+      <input id='upVisitId' type="text" placeholder="Enter Visit ID" name="upVisitId" required>
+      <label for="upPatientId"><b>Patient ID</b></label>
+      <input id='upPatientId' type="text" placeholder="Enter Patient ID" name="upPatientId" required>
+      <label for="upDoctorId"><b>Doctor ID</b></label>
+      <input id='upDoctorId' type="text" placeholder="Enter Doctor ID" name="upDoctorId" required>
+      <label for="upAilmentId"><b>Ailment ID</b></label>
+      <input id='upAilmentId' type="text" placeholder="Enter Ailment ID" name="upAilmentId" required>
+      <label for="upVisitNote"><b>Visit Note</b></label>
+      <input id='upVisitNote' type="text" placeholder="Enter visit note" name="upVisitNote" required>
+
+      <button type="submit">Submit</button>
+    </div>
+
+  </form>
+</div>
+  <script src="/javascript/visits-form.js"></script>
