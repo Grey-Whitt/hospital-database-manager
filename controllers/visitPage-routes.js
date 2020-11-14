@@ -16,7 +16,6 @@ router.get('/', auth, (req, res) => {
       .then((data) => {
         const visits = data.map((visit) => visit.get({ plain: true }));
         res.render('visits', { visits, loggedIn: true });
-
       })
       .catch((err) => {
         console.log(err);
