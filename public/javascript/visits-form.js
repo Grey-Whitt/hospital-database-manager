@@ -57,6 +57,27 @@ async function updateVisitFormHandler(event) {
     }
 }
 
+// updates visit if all fields are filled
+async function deleteVisitFormHandler(event) {
+    event.preventDefault();
+
+    const visit_id = document.querySelector('#delVisitId').value.trim();
+
+    if (visit_id ) {
+        const response = await fetch(`/api/visits/${visit_id}`, {
+            method: 'delete',
+        });
+
+        if (response.ok) {   
+            //document.location.replace('/visits');
+        } else {
+            $("#errorModal").modal()
+        }
+    }
+}
+
 document.querySelector('#newVisitForm').addEventListener('submit', addVisitFormHandler);
 
 document.querySelector('#updateVisitForm').addEventListener('submit', updateVisitFormHandler);
+
+document.querySelector('#deleteVisitForm').addEventListener('submit', deleteVisitFormHandler);
