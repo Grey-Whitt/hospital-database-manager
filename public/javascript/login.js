@@ -23,4 +23,10 @@ async function loginFormHandler(event) {
     }
 }
 
+// async function signUpHandler (event){
+//     document.location.replace('/user-form');
+// }
+
 document.querySelector('#loginForm').addEventListener('submit', loginFormHandler);
+
+// document.querySelector('#sign-up').addEventListener('submit', signUpHandler);
