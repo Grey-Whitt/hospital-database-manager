@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const { Visits, Users, Ailments } = require('../../models');
 const sequelize = require('../../config/connection');
+const checkRole = require('../../utils/check-role')
 
-router.get('/', (req, res) => {
+router.get('/', checkRole, (req, res) => {
     Visits.findAll({
         include: [
             { model: Users, as: 'doctor', attributes: { exclude: ["password"] } },

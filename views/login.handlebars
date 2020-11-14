@@ -1,47 +1,42 @@
-<body>
-
-  <!-- Modal -->
-  <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">ERROR</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          </button>
-        </div>
-        <div class="modal-body">
-          Email / Password entered is invalid
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
+<!-- Modal -->
+<div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">ERROR</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        </button>
+      </div>
+      <div class="modal-body">
+        Email / Password entered is invalid
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
-  <!-- Modal -->
+</div>
+<!-- Modal -->
 
 
-  <div class="main_container">
-    <h2>Login</h2>
+<div class="main_container">
+  <h2>Login</h2>
 
-    <form id="loginForm" method="post">
-      <div class="imgcontainer">
-        <img src="images/img_avatar2.png" alt="Avatar" class="avatar">
-      </div>
+  <form id="loginForm" method="post">
+    <div class="imgcontainer">
+      <img src="images/img_avatar2.png" alt="Avatar" class="avatar">
+    </div>
 
-      <div class="container">
-        <label for="uname"><b>Email</b></label>
-        <input id='email' type="text" placeholder="Enter Email Address" name="uname" required>
+    <div class="container">
+      <label for="uname"><b>Email</b></label>
+      <input id='email' type="text" placeholder="Enter Email Address" name="uname" required>
 
-        <label for="psw"><b>Password</b></label>
-        <input id="password" type="password" placeholder="Enter Password" name="psw" required>
+      <label for="psw"><b>Password</b></label>
+      <input id="password" type="password" placeholder="Enter Password" name="psw" required>
 
-        <button type="submit">Login</button>
-      </div>
+      <button type="submit">Login</button>
+    </div>
 
-    </form>
-    <script src="/javascript/login.js"></script>
-</body>
-
-</html>
+  </form>
+  <script src="/javascript/login.js"></script>

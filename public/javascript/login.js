@@ -1,5 +1,3 @@
-// var errorModal = document.querySelector("#errorModal");
-
 //logs the user in if the email and password are correct
 async function loginFormHandler(event) {
     event.preventDefault();
@@ -17,7 +15,7 @@ async function loginFormHandler(event) {
             headers: { 'Content-Type': 'application/json' }
         });
 
-        if (response.ok) {
+        if (response.ok) {   
             document.location.replace('/visits');
         } else {
             $("#errorModal").modal()
