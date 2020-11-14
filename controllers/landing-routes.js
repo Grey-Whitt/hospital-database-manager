@@ -1,14 +1,10 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const auth = require('../utils/auth')
 
-router.get('/', auth, (req, res) => {
-    if (req.session.role === 'doctor') {  
-        res.redirect('/doctor-panel')
-    
-    } else {
-        res.redirect('/visits')
-    }
+router.get('/', (req, res) => {
+    res.render('drlanding', {
+        // loggedIn: req.session.loggedIn
+    });
 });
 
 module.exports = router;
