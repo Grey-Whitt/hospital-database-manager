@@ -31,61 +31,61 @@ async function addUserFormHandler(event) {
     }
 }
 
-// updates user if all fields are filled
-async function updateUserFormHandler(event) {
-    event.preventDefault();
+// // updates user if all fields are filled
+// async function updateUserFormHandler(event) {
+//     event.preventDefault();
 
-    const user_id = document.querySelector('#upUserId').value.trim();
-    const first_name = document.querySelector('#upFirstName').value.trim();
-    const last_name = document.querySelector('#upLastName').value.trim();
-    const phone = document.querySelector('#upPhone').value.trim();
-    const email = document.querySelector('#upEmail').value.trim();
-    const password = document.querySelector('#upPassword').value.trim();
-    const role = 'patient';
+//     const user_id = document.querySelector('#upUserId').value.trim();
+//     const first_name = document.querySelector('#upFirstName').value.trim();
+//     const last_name = document.querySelector('#upLastName').value.trim();
+//     const phone = document.querySelector('#upPhone').value.trim();
+//     const email = document.querySelector('#upEmail').value.trim();
+//     const password = document.querySelector('#upPassword').value.trim();
+//     const role = 'patient';
 
-    if (first_name && last_name && phone && email && password) {
-        const response = await fetch(`/api/users/${user_id}`, {
-            method: 'put',
-            body: JSON.stringify({
-                first_name,
-                last_name,
-                phone,
-                email,
-                password,
-                role
-            }),
-            headers: { 'Content-Type': 'application/json' }
-        });
+//     if (first_name && last_name && phone && email && password) {
+//         const response = await fetch(`/api/users/${user_id}`, {
+//             method: 'put',
+//             body: JSON.stringify({
+//                 first_name,
+//                 last_name,
+//                 phone,
+//                 email,
+//                 password,
+//                 role
+//             }),
+//             headers: { 'Content-Type': 'application/json' }
+//         });
 
-        if (response.ok) {   
-            //document.location.replace('/visits');
-        } else {
-            $("#errorModal").modal()
-        }
-    }
-}
+//         if (response.ok) {   
+//             //document.location.replace('/visits');
+//         } else {
+//             $("#errorModal").modal()
+//         }
+//     }
+// }
 
-// updates user if all fields are filled
-async function deleteUserFormHandler(event) {
-    event.preventDefault();
+// // updates user if all fields are filled
+// async function deleteUserFormHandler(event) {
+//     event.preventDefault();
 
-    const user_id = document.querySelector('#upUserId').value.trim();
+//     const user_id = document.querySelector('#upUserId').value.trim();
 
-    if (user_id ) {
-        const response = await fetch(`/api/users/${user_id}`, {
-            method: 'delete',
-        });
+//     if (user_id ) {
+//         const response = await fetch(`/api/users/${user_id}`, {
+//             method: 'delete',
+//         });
 
-        if (response.ok) {   
-            //document.location.replace('/visits');
-        } else {
-            $("#errorModal").modal()
-        }
-    }
-}
+//         if (response.ok) {   
+//             //document.location.replace('/visits');
+//         } else {
+//             $("#errorModal").modal()
+//         }
+//     }
+// }
 
 document.querySelector('#newUserForm').addEventListener('submit', addUserFormHandler);
 
-document.querySelector('#updateUserForm').addEventListener('submit', updateUserFormHandler);
+// document.querySelector('#updateUserForm').addEventListener('submit', updateUserFormHandler);
 
-document.querySelector('#deleteUserForm').addEventListener('submit', deleteUserFormHandler);
+// document.querySelector('#deleteUserForm').addEventListener('submit', deleteUserFormHandler);

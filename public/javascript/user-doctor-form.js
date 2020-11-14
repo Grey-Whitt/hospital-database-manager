@@ -7,7 +7,12 @@ async function addUserFormHandler(event) {
     const phone = document.querySelector('#phone').value.trim();
     const email = document.querySelector('#email').value.trim();
     const password = document.querySelector('#password').value.trim();
-    const role = 'doctor';
+    let role = '';
+    if (document.querySelector('#role-doctor').checked) {
+        role = 'doctor';
+    } else if (document.querySelector('#role-patient').checked){
+        role = 'patient';
+    }
 
     if (first_name && last_name && phone && email && password) {
         const response = await fetch('/api/users', {
@@ -41,7 +46,12 @@ async function updateUserFormHandler(event) {
     const phone = document.querySelector('#upPhone').value.trim();
     const email = document.querySelector('#upEmail').value.trim();
     const password = document.querySelector('#upPassword').value.trim();
-    const role = 'doctor';
+    let role = '';
+    if (document.querySelector('#up-role-doctor').checked) {
+        role = 'doctor';
+    } else if (document.querySelector('#up-role-patient').checked){
+        role = 'patient';
+    }
 
     if (first_name && last_name && phone && email && password) {
         const response = await fetch(`/api/users/${user_id}`, {
