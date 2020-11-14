@@ -2,9 +2,13 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 
 router.get('/', (req, res) => {
+    let doctor = false
+    if (req.session.role === 'doctor') {
+        doctor = true
+    }
     res.render('homepage', {
         loggedIn: req.session.loggedIn,
-        role: req.session.role
+        role: doctor
     });
 });
 
