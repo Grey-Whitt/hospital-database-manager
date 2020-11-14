@@ -14,7 +14,7 @@ router.use('/', homeRoutes);
 router.use('/visits', visitPageRoutes);
 router.use('/doctors', bioRoutes);
 router.use('/drlanding', drlandingRoutes);
-router.use('/visitsform', visitsForm);
+router.use('/visits-form', visitsForm);
 router.use('/user-form', userForms)
 router.use('/user-doctor-form', userDocForm);
 router.use('/doctor-form', docForm);
