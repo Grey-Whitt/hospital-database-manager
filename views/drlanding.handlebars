@@ -12,10 +12,10 @@
     <div class="card-header">
       <ul class="nav nav-tabs card-header-tabs">
         <li class="nav-item">
-          <a class="nav-link active" href="#">Visits</a>
+          <a class="nav-link active" href="#">Access/Edit Info</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Patients</a>
+          <a class="nav-link disabled" href="#">Post</a>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled" href="#">Profile</a>
@@ -23,83 +23,12 @@
       </ul>
     </div>
 
-    {{!-- <div class="card-body">
-      <h5 class="card-title">Hello Doctor ___________ <br><br>Would you like to...</h5>
-      <a href="#" type="button" class="btn btn-primary" data-toggle="modal" data-target="#visitFormModal">Create New Visit</a>
-      <a href="#" class="btn btn-primary">View/Edit Visits</a>
-    </div> --}}
-
-    {{!-- <div class="card-body">
-      <h5 class="card-title">Select Patient...</h5>
-      <div class="d-flex justify-content-center">
-        <div class="dropdown">
-          <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Patients
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Patient A</a>
-            <a class="dropdown-item" href="#">Patient B</a>
-            <a class="dropdown-item" href="#">Patient C</a>
-          </div>
-        </div>
-      </div>
-    </div> --}}
-
-  </div>
-
-  <!-- Create Visit Modal -->
-  <div class="modal fade" id="visitFormModal" tabindex="-1" role="dialog" aria-labelledby="visitFormModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="visitFormModalLabel">Create a New Visit</h5>
-        </div>
-        <div class="modal-body">
-        
-        <div>
-          <div class="form-group">
-            <label for="exampleFormControlInput1">Patient Name</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1">
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlInput1">Patient Email</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlSelect1">Example select</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlSelect2">Example multiple select</label>
-            <select multiple class="form-control" id="exampleFormControlSelect2">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlTextarea1">Example textarea</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-          </div>
-        </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
+    <div class="card-body">
+      <h5 class="card-title">Hello Doctor ___________ <br><br>Would you like to add/edit...</h5>
+      <a href="#" id="visits-button" class="btn btn-primary">Visits</a>
+      <a href="#" id="patients-button" class="btn btn-primary">Patients</a>
+      <a href="#" id="doctors-button" class="btn btn-primary">Doctors</a>
     </div>
-  </div>
 
 </div>
 
