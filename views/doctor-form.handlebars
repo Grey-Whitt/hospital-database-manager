@@ -1,0 +1,66 @@
+<div class="main_container">
+  <h2>Add Doctor</h2>
+
+  <form id="newDoctorForm" method="post">
+    {{!-- <div class="imgcontainer">
+      <img src="images/img_avatar2.png" alt="Avatar" class="avatar">
+    </div> --}}
+
+    <div class="container">
+      <label for="userId"><b>User ID</b></label>
+      <input id='userId' type="text" placeholder="Enter User ID" name="userId" required>
+      <label for="doctorBio"><b>Doctor Bio</b></label>
+      <input id='doctorBio' type="text" placeholder="Enter doctor biography" name="doctorBio" required>
+      <label for="doctorSpec"><b>Doctor Specialty</b></label>
+      <input id='doctorSpec' type="text" placeholder="Enter doctor specialty" name="doctorSpec" required>
+      <label for="doctorEd"><b>Doctor Education</b></label>
+      <input id='doctorEd' type="text" placeholder="Enter doctor education" name="doctorEd" required>
+
+      <button type="submit">Submit</button>
+    </div>
+
+  </form>
+
+  <br>
+   <h2>Update Doctor</h2>
+
+  <form id="updateDoctorForm" method="post">
+    {{!-- <div class="imgcontainer">
+      <img src="images/img_avatar2.png" alt="Avatar" class="avatar">
+    </div> --}}
+
+    <div class="container">
+      <label for="upDoctorId"><b>Doctor ID</b></label>
+      <input id='upDoctorId' type="text" placeholder="Enter Doctor ID" name="upDoctorId" required>
+      <label for="upUserId"><b>User ID</b></label>
+      <input id='upUserId' type="text" placeholder="Enter User ID" name="upUserId" required>
+      <label for="upDoctorBio"><b>Doctor Bio</b></label>
+      <input id='upDoctorBio' type="text" placeholder="Enter doctor biography" name="upDoctorBio" required>
+      <label for="upDoctorSpec"><b>Doctor Specialty</b></label>
+      <input id='upDoctorSpec' type="text" placeholder="Enter doctor specialty" name="upDoctorSpec" required>
+      <label for="upDoctorEd"><b>Doctor Education</b></label>
+      <input id='upDoctorEd' type="text" placeholder="Enter doctor education" name="upDoctorEd" required>
+
+      <button type="submit">Submit</button>
+    </div>
+
+  </form>
+
+  <br>
+   <h2>Delete Doctor</h2>
+
+  <form id="deleteDoctororm" method="post">
+    {{!-- <div class="imgcontainer">
+      <img src="images/img_avatar2.png" alt="Avatar" class="avatar">
+    </div> --}}
+
+    <div class="container">
+      <label for="delDoctorId"><b>Doctor ID</b></label>
+      <input id='delDoctorId' type="text" placeholder="Enter Doctor ID" name="delDoctorId" required>
+
+      <button type="submit">Submit</button>
+    </div>
+
+  </form>
+</div>
+  <script src="/javascript/doctor-form.js"></script>
