@@ -15,7 +15,11 @@ router.get('/', auth, (req, res) => {
     })
       .then((data) => {
         const visits = data.map((visit) => visit.get({ plain: true }));
-        res.render('visits', { visits, loggedIn: true });
+        let doctor = false
+        if (req.session.role === 'doctor') {
+          doctor = true
+        }
+        res.render('visits', { visits, loggedIn: true, role: doctor });
       })
       .catch((err) => {
         console.log(err);
@@ -38,7 +42,11 @@ router.get('/', auth, (req, res) => {
         if (visits.length === 0) {
           res.redirect('/')
         } else {
-          res.render('visits', { visits, loggedIn: true });
+          let doctor = false
+          if (req.session.role === 'doctor') {
+            doctor = true
+          }
+          res.render('visits', { visits, loggedIn: true, role: doctor });
         }
       })
       .catch((err) => {
