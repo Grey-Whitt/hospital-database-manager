@@ -73,7 +73,7 @@ router.put('/:id', (req, res) => {
         });
 })
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', checkRole, (req, res) => {
     Visits.destroy(
         {
             where: {
@@ -86,6 +86,7 @@ router.delete('/:id', (req, res) => {
                 res.status(404).json({ message: 'No visit found with this id' });
                 return;
             }
+            res.send('Deleted')
         })
         .catch(err => {
             console.log(err);

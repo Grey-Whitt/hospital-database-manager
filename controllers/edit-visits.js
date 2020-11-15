@@ -19,7 +19,7 @@ router.get('/', auth, checkRole, (req, res) => {
             if (req.session.role === 'doctor') {
                 doctor = true
             }
-            res.render('visit-form-test', { visits, loggedIn: true, role: doctor });
+            res.render('edit-visits', { visits, loggedIn: true, role: doctor });
         })
         .catch((err) => {
             console.log(err);
