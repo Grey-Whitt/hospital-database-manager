@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row">
+
+        {{#each visits as |visit|}}
+
+        <div class="col-lg-4 col-sm-12 pd-3 mb-4">
+            <div class="card text-center">
+
+                <div class="card-header h5 text-primary font-weight-bold">
+                    {{format_date visit.createdAt}}
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item h6"><span class="font-weight-bold">Patient:</span>
+                            {{visit.patient.first_name}} {{visit.patient.last_name}}
+                        </li>
+                        <li class="list-group-item h6"><span class="font-weight-bold">Doctor:</span>
+                            {{visit.doctor.first_name}} {{visit.doctor.last_name}}</li>
+                        <li class="list-group-item">
+                            <div class="accordion" id="accordion">
+
+
+                                <h2 class="mb-0">
+                                    <button class="btn btn-outline-info" type="button" data-toggle="collapse"
+                                        data-target="#visit-{{visit.visit_id}}" aria-expanded="true"
+                                        aria-controls="visit-{{visit.visit_id}}">
+                                        Note
+                                    </button>
+                                </h2>
+
+
+                                <div id="visit-{{visit.visit_id}}" class="collapse" aria-labelledby="headingOne"
+                                    data-parent="#accordion">
+                                    {{visit.visit_note}}
+                                </div>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-footer btn-group">
+                    <button id="edit-visit" type="submit" class="btn btn-lg btn-outline-primary edit-visit mx-1" data={{visit.visit_id}}>Edit</button>
+                    <button id="delete-visit" type="submit" class="btn btn-lg btn-outline-danger delete-visit mx-1" data={{visit.visit_id}}>Delete</button>
+                </div>
+
+            </div>
+        </div>
+
+        {{/each}}
+    </div>
+</div>
+<script src="/javascript/delete-visits.js"></script>
