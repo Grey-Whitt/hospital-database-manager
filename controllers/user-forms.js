@@ -10,7 +10,7 @@ router.get('/', auth, checkRole, (req, res) => {
     }
     res.render('user-form', {
         loggedIn: req.session.loggedIn,
-        role: doctor
+        doctor
     });
 });
 
