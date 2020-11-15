@@ -37,6 +37,13 @@ Visits.init(
                 key: 'ailment_id'
             }
         },
+        visit_date: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                isDate: true
+            }
+        },
         visit_note: {
             type: DataTypes.STRING, //default limit 255 characters
             allowNull: true
