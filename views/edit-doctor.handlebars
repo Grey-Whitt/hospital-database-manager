@@ -1,0 +1,35 @@
+<div class="main_container">
+   <h2 id="doctor_id" data-doctor-id="{{doctor.doctor_id}}">Update Doctor: User {{id}}, Doctor {{doctor.doctor_id}}</h2>
+
+  <form id="updateUserForm" method="post">
+    {{!-- <div class="imgcontainer">
+      <img src="images/img_avatar2.png" alt="Avatar" class="avatar">
+    </div> --}}
+
+    <div class="container">
+      <label for="upFirstName"><b>First Name</b></label>
+      <input id='upFirstName' type="text" value="{{doctor.user.first_name}}"  name="upFirstName" required>
+      <label for="upLastName"><b>Last Name</b></label>
+      <input id='upLastName' type="text" value="{{doctor.user.last_name}}"  name="upLastName" required>
+
+      <label for="upPhone"><b>Phone Number</b></label>
+      <input id='upPhone' type="text" value="{{doctor.user.phone}}"  name="upPhone" required>
+      <label for="upEmail"><b>Email</b></label>
+      <input id='upEmail' type="text" value="{{doctor.user.email}}"  name="upEmail" required>
+
+      <label for="upPassword"><b>Password</b></label>
+      <input id='upPassword' type="text" placeholder="Enter a password" name="upPassword" >
+
+      <label for="upSpecialty"><b>Specialty</b></label>
+      <input id='upSpecialty' type="text" value="{{doctor.doctor_specialty}}" placeholder="Enter specialty" name="upSpecialty" required>
+      <label for="upEducation"><b>Education</b></label>
+      <input id='upEducation' type="text" value="{{doctor.doctor_education}}" placeholder="Enter education" name="upEducation" required>
+      <label for="upBio"><b>Biography</b></label>
+      <input id='upBio' type="text" value="{{doctor.doctor_bio}}" placeholder="Enter biography" name="upBio" required>
+
+      <button type="submit">Submit</button>
+    </div>
+
+  </form>
+</div>
+  <script src="/javascript/edit-doctor.js"></script>
