@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
     if (req.session.role === 'doctor') {
         doctor = true
     }
-    res.render('homepage', {
+    res.render('homepage2', {
         loggedIn: req.session.loggedIn,
         role: doctor
     });

@@ -7,7 +7,7 @@
 #gallery li{display:block; width:940px; height:280px; border:10px solid #B7B7B7; text-align: center; display: flex; justify-content: center; align-items: center; font-size: 200%}
 #gallery li:hover{border-color:#FF9900;}
 
-html{overflow-y:scroll; height: 100%;} /* Forces a scrollbar when the viewport is larger than the websites content - CSS3 */
+html{overflow-y:scroll; height: 100%;} 
 
 body{margin:0; padding:0; font-size:13px; font-family:Georgia, "Times New Roman", Times, serif; color:#919191; background-color:#232323; height: 100%;}
 
@@ -30,7 +30,7 @@ img{margin:0; padding:0; border:none; line-height:normal; vertical-align:middle;
 
 img.hero{display: block; max-width: 960px; max-height: 360px; width: auto; height: auto;}
 
-/*----------------------------------------------HTML 5 Overrides-------------------------------------*/
+
 
 address, article, aside, figcaption, figure, header, nav, section{display:block; margin:0; padding:0;}
 
@@ -38,7 +38,6 @@ q{display:block; padding:0 10px 8px 10px; color:#979797; background-color:#ECECE
 q:before{content:'� '; font-size:26px;}
 q:after{content:' �'; font-size:26px; line-height:0;}
 
-/* ----------------------------------------------Wrapper-------------------------------------*/
 
 div.wrapper{display:block; width:100%; margin:0; padding:0; text-align:left;}
 
@@ -47,7 +46,6 @@ div.wrapper{display:block; width:100%; margin:0; padding:0; text-align:left;}
 .row2 a{color:#FF9900; background-color:#FFFFFF;}
 .row3, .row3 a{color:#919191; background-color:#232323;}
 
-/*----------------------------------------------Generalise-------------------------------------*/
 
 #header, #container, #footer{display:block; width:960px; margin:0 auto;}
 
@@ -78,7 +76,6 @@ input, textarea, select{font-size:12px; font-family:Georgia,"Times New Roman",Ti
 
 .lastbox{margin-right:0;}
 
-/*----------------------------------------------Header-------------------------------------*/
 
 #header{padding:10px 0;}
 
@@ -94,18 +91,15 @@ input, textarea, select{font-size:12px; font-family:Georgia,"Times New Roman",Ti
 #header nav li a{color:#C0BAB6; background-color:#232323;}
 #header nav li a:hover{color:#FF9900; background-color:#232323;}
 
-/*----------------------------------------------Content Area-------------------------------------*/
 
 #container{padding:30px 0;}
 #container section{display:block; width:100%; margin:0 0 30px 0; padding:0;}
 #container .last{margin:0;}
 #container .more{text-align:right;}
 
-/* ------Slider-----*/
 
 #container #slider{margin-bottom:50px;}
 
-/* ------Homepage-----*/
 
 #container #homepage{display:block; width:100%; line-height:1.6em;}
 
@@ -119,7 +113,6 @@ input, textarea, select{font-size:12px; font-family:Georgia,"Times New Roman",Ti
 #container #homepage #doctors article figure ul li img{padding:4px; border:1px solid #D6D6D6;}
 #container #homepage #doctors article figure figcaption{display:block; width:100%; margin-top:20px; text-align:right;}
 
-/* ------Main Content-----*/
 
 #container #content{float:left; width:630px; line-height:1.6em;}
 
@@ -130,7 +123,6 @@ input, textarea, select{font-size:12px; font-family:Georgia,"Times New Roman",Ti
 #container #content #posts ul li article figure figcaption{display:block; float:right; width:410px;}
 #container #content #posts ul li article figure h2{font-size:14px;}
 
-/* ------Right Column-----*/
 
 #container #right_column{float:right; width:280px;}
 #container #right_column h2.title{margin-bottom:15px; padding-bottom:15px; border-bottom:1px solid #DEDEDE;}
@@ -142,7 +134,6 @@ input, textarea, select{font-size:12px; font-family:Georgia,"Times New Roman",Ti
 #container #right_column nav a{display:block; margin:0; padding:5px 10px 5px 20px; color:#666666; background:url("../images/orange_file.gif") no-repeat 10px center #FFFFFF; text-decoration:none; border-bottom:1px dotted #666666;}
 #container #right_column nav a:hover{color:#FF9900; background-color:#FFFFFF;}
 
-/* footer */
 
 body {
   display: flex;
