@@ -63,7 +63,7 @@ blockquote:after, q:after{content:' �'; font-size:26px; line-height:0;}
 
 form, fieldset, legend{margin:0; padding:0; border:none;}
 legend{display:none;}
-input, textarea, select{font-size:12px; font-family:Georgia,"Times New Roman",Times,serif;}
+input, textarea, select{font-size: 1rem}
 
 .one_quarter, .two_quarter, .three_quarter, .four_quarter{display:block; float:left; margin:0 20px 0 0;}
 .one_quarter{width:225px;}
