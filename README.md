@@ -3,8 +3,8 @@
 
 Creator | Role
 ------------ | -------------
-[Rachel Forsyth](https://github.com/tarrantrl) | Back End Development
-[Grey Whittenberger](https://github.com/Grey-Whitt) | Back End Development
+[Rachel Forsyth](https://github.com/tarrantrl) | Back End & ront End Development
+[Grey Whittenberger](https://github.com/Grey-Whitt) | Back End & Front End Development
 [Zachary Harris](https://github.com/SeymoreBiggins) | Front End Development
 [Sarah Safarzadeh](https://github.com/Sarah-Safarzadeh) | Front End Development
 
@@ -26,17 +26,13 @@ I want to get information about the clinic,\
 I want to be able to see information about the doctors*
 
 *AS A DOCTOR,\
-I want to see my patient history,\
-I want to see visit records (past and upcoming),\
-I want to update visit records,\
-I want to update my contact/about information,\
-I want to be able to add other doctor users*
+I want to see, edit, and delete patient,\
+I want to see and delete visit records (past and upcoming),\
+I want to update my contact/about information*
 
 *AS A PATIENT,\
 I want to be able to create a patient account,\
-I want to see my visits (upcoming and past),\
-I want to schedule visits (stretch goal?),\
-I want to update my contact information*
+I want to see my visits (upcoming and past)*
 
 
 ## Project Requirements:
@@ -129,7 +125,7 @@ I want to update my contact information*
 * JavaScript
 * HTML
 * CSS
-* Pug (formerly known as Jade)
+* Cloudinary
 * Node
 * Express
 * MySQL
