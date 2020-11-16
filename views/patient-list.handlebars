@@ -1,0 +1,26 @@
+<div class="container">
+        <div class="row">
+    
+            {{#each patients as |patient|}}
+            <div class="col-lg-4 col-sm-12 my-3 h6">
+                <div class="card text-center">
+                    <div class="card-header h5 text-primary font-weight-bold">
+                        {{patient.first_name}} {{patient.last_name}}
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Patient's User ID: {{patient.user_id}}</li>
+                        <li class="list-group-item">Phone: {{patient.phone}}</li>
+                        <li class="list-group-item">Email: {{patient.email}}</li>
+                    </ul>
+                    <div class="card-footer">
+                        <a href="/edit-patient/{{patient.user_id}}" class="btn btn-primary" id="edit-patient-{{patient.user_id}}">Edit</a>
+                        <a href="#" class="btn btn-danger delete-patient" id="delete-patient-{{patient.user_id}}">Delete</a>
+                    </div>
+                </div>
+            </div>
+            
+            {{/each}}
+    
+        </div>
+</div>
+<script src="/javascript/patient-list.js"></script>

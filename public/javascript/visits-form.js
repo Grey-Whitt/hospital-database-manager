@@ -2,10 +2,11 @@
 async function addVisitFormHandler(event) {
     event.preventDefault();
 
-    const patient_id = document.querySelector('#patientId').value.trim();
-    const doctor_id = document.querySelector('#doctorId').value.trim();
-    const ailment_id = document.querySelector('#ailmentId').value.trim();
+    const patient_id = document.querySelector('#patient').value.trim();
+    const doctor_id = document.querySelector('#doctor').value.trim();
+    const ailment_id = document.querySelector('#ailment').value.trim();
     const visit_note = document.querySelector('#visitNote').value.trim();
+    const visit_date = document.querySelector('#visitDate').value.trim();
 
     if (patient_id && doctor_id && ailment_id && visit_note) {
         const response = await fetch('/api/visits', {
@@ -14,58 +15,10 @@ async function addVisitFormHandler(event) {
                 patient_id,
                 doctor_id,
                 ailment_id,
+                visit_date,
                 visit_note
             }),
             headers: { 'Content-Type': 'application/json' }
-        });
-
-        if (response.ok) {   
-            //document.location.replace('/visits');
-        } else {
-            $("#errorModal").modal()
-        }
-    }
-}
-
-// updates visit if all fields are filled
-async function updateVisitFormHandler(event) {
-    event.preventDefault();
-
-    const visit_id = document.querySelector('#upVisitId').value.trim();
-    const patient_id = document.querySelector('#upPatientId').value.trim();
-    const doctor_id = document.querySelector('#upDoctorId').value.trim();
-    const ailment_id = document.querySelector('#upAilmentId').value.trim();
-    const visit_note = document.querySelector('#upVisitNote').value.trim();
-
-    if (visit_id && patient_id && doctor_id && ailment_id && visit_note) {
-        const response = await fetch(`/api/visits/${visit_id}`, {
-            method: 'put',
-            body: JSON.stringify({
-                patient_id,
-                doctor_id,
-                ailment_id,
-                visit_note
-            }),
-            headers: { 'Content-Type': 'application/json' }
-        });
-
-        if (response.ok) {   
-            //document.location.replace('/visits');
-        } else {
-            $("#errorModal").modal()
-        }
-    }
-}
-
-// updates visit if all fields are filled
-async function deleteVisitFormHandler(event) {
-    event.preventDefault();
-
-    const visit_id = document.querySelector('#delVisitId').value.trim();
-
-    if (visit_id ) {
-        const response = await fetch(`/api/visits/${visit_id}`, {
-            method: 'delete',
         });
 
         if (response.ok) {   
@@ -77,7 +30,3 @@ async function deleteVisitFormHandler(event) {
 }
 
 document.querySelector('#newVisitForm').addEventListener('submit', addVisitFormHandler);
-
-document.querySelector('#updateVisitForm').addEventListener('submit', updateVisitFormHandler);
-
-document.querySelector('#deleteVisitForm').addEventListener('submit', deleteVisitFormHandler);

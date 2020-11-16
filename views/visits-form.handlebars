@@ -7,56 +7,35 @@
     </div> --}}
 
     <div class="container">
-      <label for="patientId"><b>Patient ID</b></label>
-      <input id='patientId' type="text" placeholder="Enter Patient ID" name="patientId" required>
-      <label for="doctorId"><b>Doctor ID</b></label>
-      <input id='doctorId' type="text" placeholder="Enter Doctor ID" name="doctorId" required>
-      <label for="ailmentId"><b>Ailment ID</b></label>
-      <input id='ailmentId' type="text" placeholder="Enter Ailment ID" name="ailmentId" required>
+      <div class="form-group">
+        <label for="patient">Choose a patient:</label> 
+        <select class='form-control' name='patient' id='patient'>
+          {{#each dataObj.patients as |patient|}}
+            <option value="{{patient.user_id}}">{{patient.first_name}} {{patient.last_name}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="doctor">Choose a doctor:</label> 
+        <select name='doctor' class='form-control' id='doctor'>
+        {{#each dataObj.doctors as |doctor|}}
+            <option value="{{doctor.user_id}}">{{doctor.first_name}} {{doctor.last_name}}</option>
+        {{/each}}
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="ailment">Choose an ailment:</label> 
+        <select name='ailment' class='form-control' id='ailment'>
+        {{#each dataObj.ailments as |ailment|}}
+            <option value="{{ailment.ailment_id}}">{{ailment.ailment_name}}</option>
+        {{/each}}
+        </select>
+      </div>
+      <label for="visitDate"><b>Visit Date</b></label>
+      <input id='visitDate' type="text" placeholder="2020-11-14" name="visitDate" required>
+
       <label for="visitNote"><b>Visit Note</b></label>
       <input id='visitNote' type="text" placeholder="Enter visit note" name="visitNote" required>
-
-      <button type="submit">Submit</button>
-    </div>
-
-  </form>
-
-  <br>
-   <h2>Update Visit</h2>
-
-  <form id="updateVisitForm" method="post">
-    {{!-- <div class="imgcontainer">
-      <img src="images/img_avatar2.png" alt="Avatar" class="avatar">
-    </div> --}}
-
-    <div class="container">
-      <label for="upVisitId"><b>Visit ID</b></label>
-      <input id='upVisitId' type="text" placeholder="Enter Visit ID" name="upVisitId" required>
-      <label for="upPatientId"><b>Patient ID</b></label>
-      <input id='upPatientId' type="text" placeholder="Enter Patient ID" name="upPatientId" required>
-      <label for="upDoctorId"><b>Doctor ID</b></label>
-      <input id='upDoctorId' type="text" placeholder="Enter Doctor ID" name="upDoctorId" required>
-      <label for="upAilmentId"><b>Ailment ID</b></label>
-      <input id='upAilmentId' type="text" placeholder="Enter Ailment ID" name="upAilmentId" required>
-      <label for="upVisitNote"><b>Visit Note</b></label>
-      <input id='upVisitNote' type="text" placeholder="Enter visit note" name="upVisitNote" required>
-
-      <button type="submit">Submit</button>
-    </div>
-
-  </form>
-
-  <br>
-   <h2>Delete Visit</h2>
-
-  <form id="deleteVisitForm" method="post">
-    {{!-- <div class="imgcontainer">
-      <img src="images/img_avatar2.png" alt="Avatar" class="avatar">
-    </div> --}}
-
-    <div class="container">
-      <label for="delVisitId"><b>Visit ID</b></label>
-      <input id='delVisitId' type="text" placeholder="Enter Visit ID" name="delVisitId" required>
 
       <button type="submit">Submit</button>
     </div>

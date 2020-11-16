@@ -9,7 +9,7 @@
 
 html{overflow-y:scroll; height: 100%;} /* Forces a scrollbar when the viewport is larger than the websites content - CSS3 */
 
-body{margin:0; padding:0; font-size:13px; font-family:Georgia, "Times New Roman", Times, serif; color:#919191; background-color:#232323; height: 100%;}
+body{margin:0; padding:0; font-size:20px; font-family:Georgia, "Times New Roman", Times, serif; color:#919191; background-color:#232323; height: 100%;}
 
 .clear:after{content:"."; display:block; height:0; clear:both; visibility:hidden; line-height:0;}
 .clear{display:block; clear:both;}
@@ -158,4 +158,8 @@ footer {
   padding: 5px 2% 5px 2%;
   font-size: 110%;
   flex-shrink: 0;
+}
+
+.lh {
+  line-height: 1.5;
 }

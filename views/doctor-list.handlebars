@@ -1,0 +1,29 @@
+<div class="container">
+        <div class="row justify-content-center">
+    
+            {{#each doctors as |doctor|}}
+            <div class="col-lg-4 col-sm-12 pd-3 mb-4">
+                <div class="card text-center">
+                    <div class="card-header h5 text-primary font-weight-bold">
+                        {{doctor.user.first_name}} {{doctor.user.last_name}}
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><b>Doctor's User ID:</b> {{doctor.user_id}}</li>
+                        <li class="list-group-item"><b>Phone:</b> {{doctor.user.phone}}</li>
+                        <li class="list-group-item"><b>Email:</b> {{doctor.user.email}}</li>
+                        <li class="list-group-item"><b>Specialty:</b> {{doctor.doctor_specialty}}</li>
+                        <li class="list-group-item"><b>Education:</b> {{doctor.doctor_education}}</li>
+                        <li class="list-group-item"><b>Biography:</b> {{doctor.doctor_bio}}</li>
+                    </ul>
+                    <div class="card-footer">
+                        <a href="/edit-doctor/{{doctor.user_id}}" class="btn btn-primary" id="edit-doctor-{{doctor.user_id}}" data-doctor-id="{{doctor.doctor_id}}">Edit</a>
+                        <a href="#" class="btn btn-danger delete-doctor" id="delete-doctor-{{doctor.user_id}}" data-doctor-id="{{doctor.doctor_id}}">Delete</a>
+                    </div>
+                </div>
+            </div>
+            
+            {{/each}}
+    
+        </div>
+</div>
+<script src="/javascript/doctor-list.js"></script>

@@ -19,7 +19,7 @@ router.get('/', auth, (req, res) => {
         if (req.session.role === 'doctor') {
           doctor = true
         }
-        res.render('visits', { visits, loggedIn: true, role: doctor });
+        res.render('visits', { visits, loggedIn: true, doctor });
       })
       .catch((err) => {
         console.log(err);
@@ -42,11 +42,7 @@ router.get('/', auth, (req, res) => {
         if (visits.length === 0) {
           res.redirect('/')
         } else {
-          let doctor = false
-          if (req.session.role === 'doctor') {
-            doctor = true
-          }
-          res.render('visits', { visits, loggedIn: true, role: doctor });
+          res.render('visits', { visits, loggedIn: true, doctor: false });
         }
       })
       .catch((err) => {

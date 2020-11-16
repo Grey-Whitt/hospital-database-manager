@@ -9,9 +9,8 @@ router.get('/', (req, res) => {
         include: [
             { model: Users, as: 'doctor', attributes: { exclude: ["password"] } },
             { model: Users, as: 'patient', attributes: { exclude: ["password"] } },
-            { model: Ailments, as: 'ailment'} 
+            { model: Ailments, as: 'ailment' }
         ]
-
     })
         .then(data => res.json(data))
         .catch(err => {
@@ -29,7 +28,7 @@ router.get('/:id', (req, res) => {
             include: [
                 { model: Users, as: 'doctor', attributes: { exclude: ["password"] } },
                 { model: Users, as: 'patient', attributes: { exclude: ["password"] } },
-                { model: Ailments, as: 'ailment'}
+                { model: Ailments, as: 'ailment' }
             ]
         }
     )
@@ -45,6 +44,7 @@ router.post('/', (req, res) => {
         patient_id: req.body.patient_id,
         doctor_id: req.body.doctor_id,
         ailment_id: req.body.ailment_id,
+        visit_date: req.body.visit_date,
         visit_note: req.body.visit_note
     })
         .then(dbTreatmentData => res.json(dbTreatmentData))
@@ -56,10 +56,10 @@ router.post('/', (req, res) => {
 
 router.put('/:id', (req, res) => {
     Visits.update(req.body, {
-            where: {
-                visit_id: req.params.id
-            }
+        where: {
+            visit_id: req.params.id
         }
+    }
     )
         .then(data => {
             if (!data) {
@@ -73,7 +73,7 @@ router.put('/:id', (req, res) => {
         });
 })
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', checkRole, (req, res) => {
     Visits.destroy(
         {
             where: {
@@ -86,6 +86,7 @@ router.delete('/:id', (req, res) => {
                 res.status(404).json({ message: 'No visit found with this id' });
                 return;
             }
+            res.send('Deleted')
         })
         .catch(err => {
             console.log(err);

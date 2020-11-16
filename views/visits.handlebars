@@ -1,1 +1,124 @@
-{{> render-visits}}
+<div class="container">
+    <div class="row justify-content-center">
+        {{#if doctor_role}}
+        <a href="/forms/visits" class="btn btn-primary btn-lg px-3 mb-3" id="add-visit">Add Visit</a>
+        {{/if}}
+
+        {{#unless doctor_role}}
+            <p>Need to schedule a visit? Call the office!</p>
+        {{/unless}}
+
+        {{#each visits as |visit|}}
+
+        <div class="col-lg-4 col-sm-12 pd-3 mb-4">
+            <div class="card text-center">
+
+                <div class="card-header h5 text-primary font-weight-bold">
+                    {{format_date visit.createdAt}}
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+
+                        <li class="list-group-item h6">
+                            <div class="accordion" id="accordionExample">
+                                <div id="headingOne">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link text-dark" type="button" data-toggle="collapse"
+                                            data-target="#collapse{{visit.visit_id}}-1" aria-expanded="true"
+                                            aria-controls="collapse{{visit.visit_id}}-1">
+                                            <span class="font-weight-bold">Patient:</span>
+                                            {{visit.patient.first_name}} {{visit.patient.last_name}}
+                                        </button>
+                                    </h2>
+                                </div>
+
+                                <div id="collapse{{visit.visit_id}}-1" class="collapse" aria-labelledby="headingOne"
+                                    data-parent="#accordionExample">
+                                    <br><b>Phone Number:</b> {{visit.patient.phone}}
+                                    <br><b>Email:</b> {{visit.patient.email}}
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="list-group-item h6">
+                            <div class="accordion" id="accordionExample">
+                                <div id="headingOne">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link text-dark" type="button" data-toggle="collapse"
+                                            data-target="#collapse{{visit.visit_id}}-2" aria-expanded="true"
+                                            aria-controls="collapse{{visit.visit_id}}-2">
+                                            <span class="font-weight-bold">Doctor:</span>
+                                            {{visit.doctor.first_name}} {{visit.doctor.last_name}}
+                                        </button>
+                                    </h2>
+                                </div>
+
+                                <div id="collapse{{visit.visit_id}}-2" class="collapse" aria-labelledby="headingOne"
+                                    data-parent="#accordionExample">
+                                    <br><b>Phone Number:</b> {{visit.patient.phone}}
+                                    <br><b>Email:</b> {{visit.patient.email}}
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="list-group-item h6">
+                            <div class="accordion" id="accordionExample">
+                                <div id="headingOne">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link text-dark" type="button" data-toggle="collapse"
+                                            data-target="#collapse{{visit.visit_id}}-3" aria-expanded="true"
+                                            aria-controls="collapse{{visit.visit_id}}-3">
+                                            <span class="font-weight-bold">Ailment:</span>
+                                            {{visit.ailment.ailment_name}}
+                                        </button>
+                                    </h2>
+                                </div>
+
+                                <div id="collapse{{visit.visit_id}}-3" class="collapse" aria-labelledby="headingOne"
+                                    data-parent="#accordionExample">
+                                    <div class="m-1"><br><b>Treatment:</b> {{visit.ailment.treatment}}</div>
+                                    <br><b>Description:</b> {{visit.ailment.ailment_description}}
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="list-group-item">
+                            <div class="accordion" id="accordion">
+
+                                <h2 class="mb-0">
+                                    <button class="btn btn-outline-info" type="button" data-toggle="collapse"
+                                        data-target="#visit-{{visit.visit_id}}" aria-expanded="true"
+                                        aria-controls="visit-{{visit.visit_id}}">
+                                        Note
+                                    </button>
+                                </h2>
+
+                                <div id="visit-{{visit.visit_id}}" class="collapse lh" aria-labelledby="headingOne"
+                                    data-parent="#accordion">
+                                    {{visit.visit_note}}
+                                </div>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                {{#if ../doctor}}
+                <div class="card-footer btn-group">
+                    <button id="edit-visit" type="submit" class="btn btn-lg btn-outline-primary edit-visit mx-1"
+                        data={{visit.visit_id}}>Edit</button>
+                    <button id="delete-visit" type="submit" class="btn btn-lg btn-outline-danger delete-visit mx-1"
+                        data={{visit.visit_id}}>Delete</button>
+                </div>
+                {{/if}}
+
+            </div>
+        </div>
+
+        {{/each}}
+    </div>
+</div>
+
+{{#if doctor}}
+<script src="/javascript/delete-visits.js"></script>
+{{/if}}

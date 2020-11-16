@@ -2,24 +2,23 @@ const router = require('express').Router();
 const apiRoutes = require('./api');
 const homeRoutes = require('./home-routes');
 const visitPageRoutes = require('./visitPage-routes');
-const bioRoutes = require('./biographies');
-const landingRoutes = require('./landing-routes');
-const visitsForm = require('./visits-form');
-const userForms = require('./user-forms');
-const userDocForm = require('./user-doctor-form');
-const docForm = require('./doctor-form');
+const formRoutes = require('./form-routes')
 const docPanel = require('./doctor-panel')
+const patientList = require('./patient-list');
+const editPatient = require('./edit-patient');
+const doctorList = require('./doctor-list');
+const editDoctor = require('./edit-doctor');
+
 
 router.use('/api', apiRoutes);
 router.use('/', homeRoutes);
 router.use('/visits', visitPageRoutes);
-router.use('/doctors', bioRoutes);
-router.use('/landing', landingRoutes);
-router.use('/visits-form', visitsForm);
-router.use('/user-form', userForms)
-router.use('/user-doctor-form', userDocForm);
-router.use('/doctor-form', docForm);
+router.use('/forms', formRoutes);
 router.use('/doctor-panel', docPanel)
+router.use('/patient-list', patientList);
+router.use('/edit-patient', editPatient);
+router.use('/doctor-list', doctorList);
+router.use('/edit-doctor', editDoctor)
 
 //send 404 if user goes to undefined route
 router.use((req, res) => {
