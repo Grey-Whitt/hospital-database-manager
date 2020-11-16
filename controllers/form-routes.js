@@ -52,7 +52,7 @@ router.get('/visits', auth, checkRole, (req, res) => {
         res.render('visits-form', {
             dataObj,
             loggedIn: req.session.loggedIn,
-            doctor_role
+            doctor
         });  
     })
 

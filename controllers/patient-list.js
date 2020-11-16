@@ -17,7 +17,7 @@ router.get('/', auth, checkRole, (req, res) => {
             if (req.session.role === 'doctor') {
                 doctor = true
             }
-            res.render('patient-list', { patients, loggedIn: true, role: doctor });
+            res.render('patient-list', { patients, loggedIn: true, doctor });
         })
         .catch((err) => {
             console.log(err);

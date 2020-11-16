@@ -18,7 +18,7 @@ router.get('/:id', auth, checkRole, (req, res) => {
                 doctor = true
             }
             const patient = data.get({ plain: true });
-            res.render('edit-patient', { id: req.params.id, patient, loggedIn: true, role: doctor });
+            res.render('edit-patient', { id: req.params.id, patient, loggedIn: true, doctor });
         })
         .catch((err) => {
             console.log(err);
