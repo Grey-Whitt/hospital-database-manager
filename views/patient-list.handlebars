@@ -1,10 +1,9 @@
 <div class="container">
-    <div class="container-fluid">
         <div class="row">
     
             {{#each patients as |patient|}}
-            <div class="col-lg-4 my-3 h6">
-                <div class="card text-center" style="width: 18rem;">
+            <div class="col-lg-4 col-sm-12 my-3 h6">
+                <div class="card text-center">
                     <div class="card-header h5 text-primary font-weight-bold">
                         {{patient.first_name}} {{patient.last_name}}
                     </div>
@@ -23,6 +22,5 @@
             {{/each}}
     
         </div>
-    </div>
 </div>
 <script src="/javascript/patient-list.js"></script>
