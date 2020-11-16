@@ -1,11 +1,10 @@
 <div class="container">
     <div class="row justify-content-center">
-        {{#if doctor_role}}
-        {{doctor_role}}
+        {{#if doctor}}
         <a href="/forms/visits" class="btn btn-primary btn-lg px-3 mb-3" id="add-visit">Add Visit</a>
         {{/if}}
     
-        {{#unless doctor_role}}
+        {{#unless doctor}}
         <p>Need to schedule a visit? Call the office!</p>
         {{/unless}}
     </div>
