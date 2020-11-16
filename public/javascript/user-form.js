@@ -22,12 +22,30 @@ async function addUserFormHandler(event) {
             }),
             headers: { 'Content-Type': 'application/json' }
         });
+        if (response.ok) {
+            if (response.ok) {
+                const response = await fetch('/api/users/login', {
+                    method: 'post',
+                    body: JSON.stringify({
+                        email,
+                        password
+                    }),
+                    headers: { 'Content-Type': 'application/json' }
+                });
+                
+                if (response.ok) {
+                    document.location.replace('/landing');
+                } else {
+                    $("#loginErrorModal").modal()
+                }
 
-        if (response.ok) {   
-            document.location.replace('/');
+            } else {
+                $("#errorModal").modal()
+            }
         } else {
             $("#errorModal").modal()
         }
+
     }
 }
 
