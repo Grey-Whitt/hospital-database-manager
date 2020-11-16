@@ -1,32 +1,11 @@
-<!-- Modal -->
-<div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">ERROR</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        </button>
-      </div>
-      <div class="modal-body">
-        Email / Password entered is invalid
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Modal -->
-
 
 <div class="main_container">
   <h2>Login</h2>
 
   <form id="loginForm" method="post">
-    {{!-- <div class="imgcontainer">
-      <img src="https://res.cloudinary.com/gwrtdhv/image/upload/v1605331812/img_avatar2_n8emwb.png" alt="Avatar" class="avatar">
-    </div> --}}
+    <div class="imgcontainer">
+      <img src="https://res.cloudinary.com/gwrtdhv/image/upload/v1605488980/clipart2111478_wcxdwi.png" alt="Avatar" class="avatar">
+    </div>
 
     <div class="container">
       <label for="uname"><b>Email</b></label>
@@ -35,11 +14,10 @@
       <label for="psw"><b>Password</b></label>
       <input id="password" type="password" placeholder="Enter Password" name="psw" required>
 
-      <button class="btn btn-success" type="submit">Login</button>
+      <button class="btn btn-success" type="submit" minlength="4">Login</button>
       </form>
 
-      {{!-- <button type="sign-up" id="sign-up">Sign Up</button> --}}
-      <a class="pretty-button btn btn-success" href="/user-form" type="button">Sign Up</a>
+      <a class="pretty-button btn btn-success" href="/forms/user" type="button">Sign Up</a>
       
     </div>
 

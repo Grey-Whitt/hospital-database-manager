@@ -13,34 +13,12 @@ router.get('/visits', auth, checkRole, (req, res) => {
     });
 });
 
-router.get('/user', auth, checkRole, (req, res) => {
+router.get('/user', (req, res) => {
     let doctor = false
     if (req.session.role === 'doctor') {
         doctor = true
     }
     res.render('user-form', {
-        loggedIn: req.session.loggedIn,
-        doctor
-    });
-});
-
-router.get('/doctor-user', auth, checkRole, (req, res) => {
-    let doctor = false
-    if (req.session.role === 'doctor') {
-        doctor = true
-    }
-    res.render('user-doctor-form', {
-        loggedIn: req.session.loggedIn,
-        doctor
-    });
-});
-
-router.get('/doctor', auth, checkRole, (req, res) => {
-    let doctor = false
-    if (req.session.role === 'doctor') {
-        doctor = true
-    }
-    res.render('doctor-form', {
         loggedIn: req.session.loggedIn,
         doctor
     });
