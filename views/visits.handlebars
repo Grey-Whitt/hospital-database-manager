@@ -1,12 +1,15 @@
 <div class="container">
     <div class="row justify-content-center">
-        {{#if doctor_role}}
+        {{#if doctor}}
         <a href="/forms/visits" class="btn btn-primary btn-lg px-3 mb-3" id="add-visit">Add Visit</a>
         {{/if}}
-
-        {{#unless doctor_role}}
-            <p>Need to schedule a visit? Call the office!</p>
+    
+        {{#unless doctor}}
+        <p>Need to schedule a visit? Call the office!</p>
         {{/unless}}
+    </div>
+    
+    <div class="row justify-content-center">
 
         {{#each visits as |visit|}}
 
@@ -102,7 +105,7 @@
                         </li>
                     </ul>
                 </div>
-                
+
                 {{#if ../doctor}}
                 <div class="card-footer btn-group">
                     <button id="edit-visit" type="submit" class="btn btn-lg btn-outline-primary edit-visit mx-1"
