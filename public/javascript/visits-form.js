@@ -1,7 +1,7 @@
 // adds visit if all fields are filled
 async function addVisitFormHandler(event) {
     event.preventDefault();
-
+    
     const patient_id = document.querySelector('#patient').value.trim();
     const doctor_id = document.querySelector('#doctor').value.trim();
     const ailment_id = document.querySelector('#ailment').value.trim();
@@ -22,7 +22,7 @@ async function addVisitFormHandler(event) {
         });
 
         if (response.ok) {   
-            //document.location.replace('/visits');
+            document.location.replace('/visits');
         } else {
             $("#errorModal").modal()
         }
