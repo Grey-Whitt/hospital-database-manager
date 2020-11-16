@@ -22,7 +22,7 @@ async function addVisitFormHandler(event) {
         });
 
         if (response.ok) {   
-            //document.location.replace('/visits');
+            document.location.replace('/visits');
         } else {
             $("#errorModal").modal()
         }
