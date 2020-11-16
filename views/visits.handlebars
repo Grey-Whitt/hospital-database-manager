@@ -8,7 +8,7 @@
         <p>Need to schedule a visit? Call the office!</p>
         {{/unless}}
     </div>
-    
+
     <div class="row justify-content-center">
 
         {{#each visits as |visit|}}
@@ -17,7 +17,7 @@
             <div class="card text-center">
 
                 <div class="card-header h5 text-primary font-weight-bold">
-                    {{format_date visit.createdAt}}
+                    {{visit.visit_date}}
                 </div>
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
@@ -107,9 +107,7 @@
                 </div>
 
                 {{#if ../doctor}}
-                <div class="card-footer btn-group">
-                    <button id="edit-visit" type="submit" class="btn btn-lg btn-outline-primary edit-visit mx-1"
-                        data={{visit.visit_id}}>Edit</button>
+                <div class="card-footer">
                     <button id="delete-visit" type="submit" class="btn btn-lg btn-outline-danger delete-visit mx-1"
                         data={{visit.visit_id}}>Delete</button>
                 </div>
