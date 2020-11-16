@@ -6,6 +6,7 @@ async function addVisitFormHandler(event) {
     const doctor_id = document.querySelector('#doctorId').value.trim();
     const ailment_id = document.querySelector('#ailmentId').value.trim();
     const visit_note = document.querySelector('#visitNote').value.trim();
+    const visit_date = ocument.querySelector('#visitDate').value.trim();
 
     if (patient_id && doctor_id && ailment_id && visit_note) {
         const response = await fetch('/api/visits', {
@@ -14,6 +15,7 @@ async function addVisitFormHandler(event) {
                 patient_id,
                 doctor_id,
                 ailment_id,
+                visit_date,
                 visit_note
             }),
             headers: { 'Content-Type': 'application/json' }

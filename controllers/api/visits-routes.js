@@ -45,6 +45,7 @@ router.post('/', (req, res) => {
         patient_id: req.body.patient_id,
         doctor_id: req.body.doctor_id,
         ailment_id: req.body.ailment_id,
+        visit_date: req.body.visit_date,
         visit_note: req.body.visit_note
     })
         .then(dbTreatmentData => res.json(dbTreatmentData))
