@@ -26,12 +26,14 @@ I want to get information about the clinic,\
 I want to be able to see information about the doctors*
 
 *AS A DOCTOR,\
-I want to see, edit, and delete patient,\
-I want to see and delete visit records (past and upcoming),\
-I want to update my contact/about information*
+I want to be able to log in,\
+I want to see, edit, and delete patients,\
+I want to see and delete visit records for all patients (past and upcoming),\
+I want to update doctor contact/about information*
 
 *AS A PATIENT,\
 I want to be able to create a patient account,\
+I want to be able to log in to my account,\
 I want to see my visits (upcoming and past)*
 
 
