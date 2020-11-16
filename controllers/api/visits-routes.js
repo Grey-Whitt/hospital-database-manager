@@ -7,8 +7,8 @@ const checkRole = require('../../utils/check-role')
 router.get('/', (req, res) => {
     Visits.findAll({
         include: [
-            { model: Users, as: 'doctor' },
-            { model: Users, as: 'patient' },
+            { model: Users, as: 'doctor', attributes: { exclude: ["password"] } },
+            { model: Users, as: 'patient', attributes: { exclude: ["password"] } },
             { model: Ailments, as: 'ailment' }
         ]
     })
