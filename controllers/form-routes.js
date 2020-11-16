@@ -4,9 +4,9 @@ const checkRole = require('../utils/check-role');
 const { Users, Doctors, Ailments } = require('../models')
 
 router.get('/visits', auth, checkRole, (req, res) => {
-    let doctor_role = false
+    let doctor = false
     if (req.session.role === 'doctor') {
-        doctor_role = true
+        doctor = true
     }
     let dataObj = {};
     
@@ -55,6 +55,11 @@ router.get('/visits', auth, checkRole, (req, res) => {
             doctor
         });  
     })
+    res.render('visits-form', {
+        dataObj,
+        loggedIn: req.session.loggedIn,
+        doctor
+    }); 
 
 });
 
