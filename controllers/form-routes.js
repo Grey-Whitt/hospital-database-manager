@@ -8,52 +8,25 @@ router.get('/visits', auth, checkRole, (req, res) => {
     if (req.session.role === 'doctor') {
         doctor = true
     }
-    let dataObj = {};
-    
-    Users.findAll({
-        attributes: { exclude: ['password'] },
-        where: {
-            role: "doctor"   
-        }
-    })
-    .then((doctorData) => {
-        const doctors = doctorData.map((doctor) => doctor.get({ plain: true }));
-        dataObj.doctors = doctors;
+
+    Promise.all([
+        Users.findAll({attributes: { exclude: ['password'] }, where: {role: "doctor" }}), 
+        Users.findAll({attributes: { exclude: ['password'] }, where: {role: "patient" }}), 
+        Ailments.findAll()
+    ])
+    .then((data) => {
+        const doctors = data[0].map((doctorIns) => doctorIns.get({ plain: true }));
+        const patients = data[1].map((patient) => patient.get({ plain: true }));
+        const ailments = data[2].map((ailment) => ailment.get({ plain: true }));
+        res.render('visits-form', {
+            doctors, patients, ailments,
+            loggedIn: req.session.loggedIn,
+            doctor
+        })
     })
     .catch((err) => {
         console.log(err);
         res.status(500).json(err);
-    })
-    .then(() => {
-        Users.findAll({
-            attributes: { exclude: ['password'] },
-            where: {
-                role: "patient"   
-            }
-        })
-        .then((patientData) => {
-            const patients = patientData.map((patient) => patient.get({ plain: true }));
-            dataObj.patients = patients;
-        })
-    })
-    .then(() => {
-        Ailments.findAll()
-        .then((ailmentData) => {
-            const ailments = ailmentData.map((ailment) => ailment.get({ plain: true }));
-            dataObj.ailments = ailments;
-        })
-    
-        .catch((err) => {
-            console.log(err);
-            res.status(500).json(err);
-        })
-    })
-    .then(() => {
-        res.render('visits-form', {
-            dataObj,
-            loggedIn: req.session.loggedIn,
-            doctor
-        });  
     })
     res.render('visits-form', {
         dataObj,
