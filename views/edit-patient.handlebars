@@ -1,28 +1,30 @@
-<div class="main_container">
-   <h2>Update User {{id}}</h2>
-
-  <form id="updateUserForm" method="post">
-    {{!-- <div class="imgcontainer">
-      <img src="images/img_avatar2.png" alt="Avatar" class="avatar">
-    </div> --}}
-
-    <div class="container">
-      <label for="upFirstName"><b>First Name</b></label>
-      <input id='upFirstName' type="text" value="{{patient.first_name}}"  name="upFirstName" required>
-      <label for="upLastName"><b>Last Name</b></label>
-      <input id='upLastName' type="text" value="{{patient.last_name}}"  name="upLastName" required>
-
-      <label for="upPhone"><b>Phone Number</b></label>
-      <input id='upPhone' type="text" value="{{patient.phone}}"  name="upPhone" required>
-      <label for="upEmail"><b>Email</b></label>
-      <input id='upEmail' type="text" value="{{patient.email}}"  name="upEmail" required>
-
-      <label for="upPassword"><b>Password</b></label>
-      <input id='upPassword' type="text" placeholder="Enter a password" name="upPassword" >
-
-      <button type="submit">Submit</button>
+<main class="content">
+    <div class="main_container">
+       <h2>Update User {{id}}</h2>
+    
+      <form id="updateUserForm" method="post">
+        {{!-- <div class="imgcontainer">
+          <img src="images/img_avatar2.png" alt="Avatar" class="avatar">
+        </div> --}}
+    
+        <div class="container">
+          <label for="upFirstName"><b>First Name</b></label>
+          <input id='upFirstName' type="text" value="{{patient.first_name}}"  name="upFirstName" required>
+          <label for="upLastName"><b>Last Name</b></label>
+          <input id='upLastName' type="text" value="{{patient.last_name}}"  name="upLastName" required>
+    
+          <label for="upPhone"><b>Phone Number</b></label>
+          <input id='upPhone' type="text" value="{{patient.phone}}"  name="upPhone" required>
+          <label for="upEmail"><b>Email</b></label>
+          <input id='upEmail' type="text" value="{{patient.email}}"  name="upEmail" required>
+    
+          <label for="upPassword"><b>Password</b></label>
+          <input id='upPassword' type="text" placeholder="Enter a password" name="upPassword" >
+    
+          <button type="submit">Submit</button>
+        </div>
+    
+      </form>
     </div>
-
-  </form>
-</div>
-  <script src="/javascript/edit-patient.js"></script>
+      <script src="/javascript/edit-patient.js"></script>
+</main>

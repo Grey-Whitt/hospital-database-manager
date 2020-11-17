@@ -28,7 +28,7 @@ img{margin:0; padding:0; border:none; line-height:normal; vertical-align:middle;
 .imgl{float:left; margin:0 15px 15px 0; clear:left;}
 .imgr{float:right; margin:0 0 15px 15px; clear:right;}
 
-img.hero{display: block; max-width: 960px; max-height: 360px; width: auto; height: auto;}
+img.hero{max-height: 360px; width: auto}
 
 /*----------------------------------------------HTML 5 Overrides-------------------------------------*/
 

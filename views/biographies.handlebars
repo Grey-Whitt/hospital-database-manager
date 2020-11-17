@@ -1,31 +1,33 @@
-{{#each doctors as |doctor|}}
-<div class="container">
-    <div class="accordion" id="accordionExample">
-        <div class="card">
-            {{!-- <div class="card-header" id="headingOne">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#1234"
-                            aria-expanded="true" aria-controls="1234">
-                            {{visit.createdAt}}
-                        </button>
-                    </h2>
-                </div> --}}
-
-            <div id="1234" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                <div class="card-body">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <div class="font-weight-bold"><b></b>Name</b></div> {{doctor.user.first_name}} {{doctor.user.last_name}}
-                            <div class="font-weight-bold"><br><b></b>Phone Number</b></div> {{doctor.user.phone}}
-                            <div class="font-weight-bold"><br><b></b>Email</b></div> {{doctor.user.email}}
-                            <div class="font-weight-bold"><br><b></b>Specialty</b></div> {{doctor.doctor_specialty}}
-                            <div class="font-weight-bold"><br><b></b>Education</b></div> {{doctor.doctor_education}}
-                            <div class="font-weight-bold"><br><b></b>Bio</b></div> {{doctor.doctor_bio}}
-                        </li>
-                    </ul>
+<main class="content">
+    {{#each doctors as |doctor|}}
+    <div class="container">
+        <div class="accordion" id="accordionExample">
+            <div class="card">
+                {{!-- <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#1234"
+                                aria-expanded="true" aria-controls="1234">
+                                {{visit.createdAt}}
+                            </button>
+                        </h2>
+                    </div> --}}
+    
+                <div id="1234" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <div class="font-weight-bold"><b></b>Name</b></div> {{doctor.user.first_name}} {{doctor.user.last_name}}
+                                <div class="font-weight-bold"><br><b></b>Phone Number</b></div> {{doctor.user.phone}}
+                                <div class="font-weight-bold"><br><b></b>Email</b></div> {{doctor.user.email}}
+                                <div class="font-weight-bold"><br><b></b>Specialty</b></div> {{doctor.doctor_specialty}}
+                                <div class="font-weight-bold"><br><b></b>Education</b></div> {{doctor.doctor_education}}
+                                <div class="font-weight-bold"><br><b></b>Bio</b></div> {{doctor.doctor_bio}}
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-{{/each}}
+    {{/each}}
+</main>

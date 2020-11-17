@@ -1,45 +1,47 @@
-<div class="container justify-content-center">
-  <div class="row">
-    <div class="col-sm">
-
+<main class="content">
+  <div class="container justify-content-center">
+    <div class="row">
+      <div class="col-sm">
+  
+      </div>
     </div>
   </div>
-</div>
-
-<div class="container">
-  <div class="card text-center">
-
-    <div class="card-header">
-      <ul class="nav nav-tabs card-header-tabs">
-        <li class="nav-item">
-          <a class="nav-link active">Access/Edit Info</a>
-        </li>
-      </ul>
+  
+  <div class="container">
+    <div class="card text-center">
+  
+      <div class="card-header">
+        <ul class="nav nav-tabs card-header-tabs">
+          <li class="nav-item">
+            <a class="nav-link active">Access/Edit Info</a>
+          </li>
+        </ul>
+      </div>
+  
+      <div class="card-body mb-5">
+        <h5 class="card-title">Hello Doctor {{session.first_name}} {{session.last_name}} <br><br>Would you like to
+          add/edit...</h5>
+        <a href="/visits" id="visits-button" class="btn btn-primary btn-lg">Visits</a>
+        <a href="/patient-list" id="patients-button" class="btn btn-primary btn-lg">Patients</a>
+        <a href="/doctor-list" id="doctors-button" class="btn btn-primary btn-lg">Doctors</a>
+      </div>
+      <section id="doctors" class="mt-5">
+        <article>
+          <figure>
+            <ul class="clear">
+              <li class="one_third">2-1B Surgical Droid<img
+                  src="https://res.cloudinary.com/gwrtdhv/image/upload/v1605331637/21B_img_mhzunc.jpg" width="290"
+                  height="180" alt=""></li>
+              <li class="one_third">FX-7 Medical Assistant Droid<img
+                  src="https://res.cloudinary.com/gwrtdhv/image/upload/v1605331810/fx7_img_hbjxss.jpg" width="290"
+                  height="180" alt=""></li>
+              <li class="one_third lastbox">Gonk Droid<img
+                  src="https://res.cloudinary.com/gwrtdhv/image/upload/v1605331811/gonk_img_kqu2xx.jpg" width="290"
+                  height="180" alt=""></li>
+            </ul>
+          </figure>
+        </article>
+      </section>
+  
     </div>
-
-    <div class="card-body mb-5">
-      <h5 class="card-title">Hello Doctor {{session.first_name}} {{session.last_name}} <br><br>Would you like to
-        add/edit...</h5>
-      <a href="/visits" id="visits-button" class="btn btn-primary btn-lg">Visits</a>
-      <a href="/patient-list" id="patients-button" class="btn btn-primary btn-lg">Patients</a>
-      <a href="/doctor-list" id="doctors-button" class="btn btn-primary btn-lg">Doctors</a>
-    </div>
-    <section id="doctors" class="mt-5">
-      <article>
-        <figure>
-          <ul class="clear">
-            <li class="one_third">2-1B Surgical Droid<img
-                src="https://res.cloudinary.com/gwrtdhv/image/upload/v1605331637/21B_img_mhzunc.jpg" width="290"
-                height="180" alt=""></li>
-            <li class="one_third">FX-7 Medical Assistant Droid<img
-                src="https://res.cloudinary.com/gwrtdhv/image/upload/v1605331810/fx7_img_hbjxss.jpg" width="290"
-                height="180" alt=""></li>
-            <li class="one_third lastbox">Gonk Droid<img
-                src="https://res.cloudinary.com/gwrtdhv/image/upload/v1605331811/gonk_img_kqu2xx.jpg" width="290"
-                height="180" alt=""></li>
-          </ul>
-        </figure>
-      </article>
-    </section>
-
-  </div>
+</main>
