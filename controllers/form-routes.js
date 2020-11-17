@@ -28,11 +28,6 @@ router.get('/visits', auth, checkRole, (req, res) => {
         console.log(err);
         res.status(500).json(err);
     })
-    res.render('visits-form', {
-        dataObj,
-        loggedIn: req.session.loggedIn,
-        doctor
-    }); 
 
 });
 
