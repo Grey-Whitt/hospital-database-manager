@@ -132,3 +132,4 @@ I want to see my visits (upcoming and past)*
 * Express
 * MySQL
 * Sequelize
+* Handlebars
