@@ -3,8 +3,8 @@
 
 Creator | Role
 ------------ | -------------
-[Rachel Forsyth](https://github.com/tarrantrl) | Back End & ront End Development
-[Grey Whittenberger](https://github.com/Grey-Whitt) | Back End & Front End Development
+[Rachel Forsyth](https://github.com/tarrantrl) | Full-stack Development
+[Grey Whittenberger](https://github.com/Grey-Whitt) |Full-stack Development
 [Zachary Harris](https://github.com/SeymoreBiggins) | Front End Development
 [Sarah Safarzadeh](https://github.com/Sarah-Safarzadeh) | Front End Development
 
