@@ -135,3 +135,4 @@ I want to see my visits (upcoming and past)*
 * MySQL
 * Sequelize
 * Handlebars
+* Bcrypt
