@@ -1,4 +1,4 @@
-# Clinic Buddy
+# [Clinic Pal](https://clinic-pal.herokuapp.com/)
 **Project Two - The Coding Bootcampt at UT**
 
 Creator | Role
