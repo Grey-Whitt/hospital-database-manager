@@ -10,6 +10,8 @@ Creator | Role
 
 ## Description:
 
+Clinic Pal is a database management system desinged to be used for small-scale doctors offices or other clinics. The app provides a home page for clients to see relevant information about the clinic, and a portal to see previous and upcoming visits. Doctors and other admins can add and delete patients and other admins, as well as schedule, view, and delete visits.
+
 # Table of Contents 
 
 - [Description](#description)
